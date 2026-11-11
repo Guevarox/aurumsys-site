@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="theme-color" content="#0A0D14">
-<meta property="og:title" content="AurumSys">
+<meta name="theme-color" content="#000E26">
+<meta property="og:title" content="AurumSys — Custom Software Solutions">
 <meta property="og:description" content="Easy-to-use programs, websites and apps for your business · Suriname">
-<meta property="og:image" content="https://aurumsys.net/logo-dark.png">
+<meta property="og:image" content="https://aurumsys.net/logo.png">
 <title>AurumSys</title>
 <meta name="description" content="AurumSys — programas, sites e aplicativos sob medida, simples de usar, para empresas no Suriname.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,9 +17,9 @@
 <style>
 /* Layout: committed dark "private bank" look — serif headlines, generous space, thin rules, one blue accent and a green WhatsApp action repeated down the page */
 :root{
-  --bg:#0A0D14; --surface:#111622; --surface-2:#171E2D; --line:#242D40; --line-soft:#1B2232;
-  --fg:#F2F4F8; --muted:#9AA4B7; --blue:#5B82FF; --blue-2:#9DB4FF; --blue-deep:#2448C9;
-  --wa:#22B35F; --wa-deep:#1A9A50; --warn:#E8735E; --white:#FFFFFF;
+  --bg:#000E26; --surface:#081936; --surface-2:#0E2244; --line:#1C3058; --line-soft:#12254A;
+  --fg:#F3F5F9; --muted:#A0ABC4; --blue:#FDC21E; --blue-2:#FFD04D; --blue-deep:#E0A700;
+  --wa:#22B35F; --wa-deep:#1A9A50; --warn:#F07A63; --white:#FFFFFF; --ink:#0A1428;
   --f-display:"Fraunces",Georgia,"Times New Roman",serif;
   --f-body:"Manrope","Segoe UI",system-ui,sans-serif;
   --r:18px;
@@ -44,7 +44,8 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background
 .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;height:70px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--f-body);font-weight:800;font-size:20px;letter-spacing:-.02em}
 .brand .s{color:var(--blue);font-weight:600}
-.mark{width:32px;height:32px;flex-shrink:0}
+.brand img{height:40px;width:auto;display:block}
+@media (max-width:420px){.brand img{height:32px}}
 .nav-r{display:flex;align-items:center;gap:10px}
 .lang{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px}
 .lang button{border:0;background:none;color:var(--muted);font:700 12.5px var(--f-body);padding:6px 10px;border-radius:999px;cursor:pointer}
@@ -63,7 +64,7 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background
 
 /* hero */
 .hero{position:relative;padding-block:72px 80px;overflow:hidden}
-.hero::after{content:"";position:absolute;right:-20%;top:-30%;width:70%;aspect-ratio:1;max-width:100%;background:radial-gradient(closest-side,rgba(91,130,255,.18),transparent 70%);pointer-events:none}
+.hero::after{content:"";position:absolute;right:-20%;top:-30%;width:70%;aspect-ratio:1;max-width:100%;background:radial-gradient(closest-side,rgba(253,194,30,.12),transparent 70%);pointer-events:none}
 .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
 .hero h1{font-size:clamp(44px,6.8vw,82px);margin:20px 0 0}
 .hero .sub{font-size:clamp(18px,1.7vw,21px);margin:24px 0 34px}
@@ -77,15 +78,15 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background
 .ba{display:grid;gap:14px}
 .ba-card{border-radius:var(--r);padding:24px;border:1px solid var(--line);min-width:0}
 .ba-card.before{background:var(--surface)}
-.ba-card.after{background:linear-gradient(140deg,#2E57E8,#1B3AB0);border-color:transparent;box-shadow:0 30px 60px -30px rgba(46,87,232,.6)}
+.ba-card.after{background:linear-gradient(140deg,#FFD04D,#F2B100);border-color:transparent;box-shadow:0 30px 60px -30px rgba(253,194,30,.55)}
 .ba-card .lbl{font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px;opacity:.75}
 .ba-card ul{list-style:none;margin:0;padding:0;display:grid;gap:11px;font-size:16px;font-weight:600}
 .ba-card li{display:flex;gap:12px;align-items:center;line-height:1.35}
 .ba-card li i{font-style:normal;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:12px;flex-shrink:0;font-weight:800}
 .before li{color:var(--muted)}
 .before li i{background:rgba(232,115,94,.14);color:var(--warn)}
-.after li i{background:rgba(255,255,255,.18);color:var(--white)}
-.after{color:var(--white)}
+.after li i{background:rgba(10,20,40,.14);color:var(--ink)}
+.after{color:var(--ink)}
 
 section.block{padding-block:96px;border-top:1px solid var(--line-soft)}
 .head{margin-bottom:44px;display:grid;gap:14px}
@@ -181,7 +182,7 @@ footer{padding-block:40px 96px;color:var(--muted);font-size:14px;border-top:1px 
 
 <header class="top">
   <div class="wrap nav">
-    <a href="#top" class="brand" aria-label="AurumSys"><svg class="mark" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 3.5 L41.8 13.75 L24 24 L6.2 13.75 Z" fill="#8FAAFF"/><path d="M6.2 13.75 L24 24 V44.5 L6.2 34.25 Z" fill="#2448C9"/><path d="M24 24 L41.8 13.75 V34.25 L24 44.5 Z" fill="#3D6BFF"/><path d="M24 24 L32.9 18.9 L41.8 24 L32.9 29.1 Z" fill="#0A0D14"/></svg><span>Aurum<span class="s">Sys</span></span></a>
+    <a href="#top" class="brand"><img src="logo-full.png" alt="AurumSys — Custom Software Solutions" width="692" height="140"></a>
     <div class="nav-r">
       <div class="lang" role="group" aria-label="Language">
         <button id="l-en" aria-pressed="true" data-lang="en">EN</button>
@@ -394,7 +395,7 @@ footer{padding-block:40px 96px;color:var(--muted);font-size:14px;border-top:1px 
 <footer>
   <div class="wrap foot">
     <span>© 2026 AurumSys · All rights reserved.</span>
-    <span>aurumsys.net · v7</span>
+    <span>aurumsys.net · v8</span>
   </div>
 </footer>
 
