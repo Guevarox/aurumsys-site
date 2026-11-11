@@ -173,6 +173,36 @@ section.block{padding-block:96px;border-top:1px solid var(--line-soft)}
 footer{padding-block:40px 96px;color:var(--muted);font-size:14px;border-top:1px solid var(--line-soft)}
 .foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
+
+/* v9 additions */
+.offer .hook{font-family:var(--f-display);font-style:italic;color:var(--blue-2);font-size:19px;line-height:1.3;margin:0}
+.strip{margin-top:28px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 24px;border:1px solid var(--line);border-radius:20px;padding:22px 26px;background:var(--surface)}
+.strip p{margin:0;font-weight:700;font-size:18px}
+.strip p span{color:var(--muted);font-weight:500;display:block;font-size:15.5px}
+.cases{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.case{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:28px;display:grid;gap:14px;min-width:0}
+.case .tag{justify-self:start;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);background:var(--blue);border-radius:999px;padding:5px 12px}
+.case h3{font-size:24px}
+.case dl{margin:0;display:grid;gap:10px}
+.case dt{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.case dd{margin:2px 0 0;font-size:16px}
+.case dd.res{color:var(--fg);font-weight:600}
+@media (max-width:820px){.cases{grid-template-columns:1fr}}
+.pillars.wide{grid-template-columns:repeat(4,1fr);margin-top:36px}
+@media (max-width:900px){.pillars.wide{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.pillars.wide{grid-template-columns:1fr}}
+.guar3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.g{border:1px solid var(--line);border-radius:22px;padding:28px;background:var(--surface);min-width:0;display:grid;gap:10px;align-content:start}
+.g .num{font-family:var(--f-display);font-size:40px;line-height:1;color:var(--blue-2)}
+.g h3{font-size:22px}
+.g p{margin:0;color:var(--muted)}
+@media (max-width:860px){.guar3{grid-template-columns:1fr}}
+.founder{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;border:1px solid var(--line);border-radius:22px;padding:24px 26px;background:var(--surface);max-width:640px;margin:26px auto 0;text-align:left}
+.avatar{width:72px;height:72px;border-radius:50%;background:linear-gradient(140deg,#FFD04D,#F2B100);color:var(--ink);display:grid;place-items:center;font-family:var(--f-display);font-size:32px;font-weight:600}
+.founder b{display:block;font-size:18px}
+.founder small{display:block;color:var(--blue-2);font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
+.founder p{margin:0;color:var(--muted);font-size:15.5px}
+@media (max-width:520px){.founder{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
@@ -205,7 +235,7 @@ footer{padding-block:40px 96px;color:var(--muted);font-size:14px;border-top:1px 
           <a class="btn btn-wa" href="https://wa.me/5978641010" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3z"/></svg><span data-i="cta1">Quero meu orçamento grátis</span></a>
           <a class="btn btn-line" href="#o-que-eu-faco" data-i="cta2">Ver o que eu faço</a>
         </div>
-        <p class="micro" data-i="micro">Sem compromisso. Você fala direto com quem desenvolve o sistema.</p>
+        <p class="micro" data-i="micro">Sem compromisso. Você fala direto com quem desenvolve o sistema. Atendo em todo o Suriname e também à distância.</p>
         <ul class="trust">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.4-3 7.7-7 9-4-1.3-7-4.6-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span data-i="t1">Dados protegidos</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg><span data-i="t2">Funciona no celular</span></li>
@@ -265,6 +295,7 @@ footer{padding-block:40px 96px;color:var(--muted);font-size:14px;border-top:1px 
         <article class="offer">
           <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4M7 12l3-3 2.5 2.5L17 8"/></svg></div>
           <h3 data-i="o1t">Programa para o seu negócio</h3>
+          <p class="hook" data-i="o1h">Troque o caderno por um sistema.</p>
           <p data-i="o1p">Um sistema para organizar o dia a dia da sua empresa.</p>
           <ul>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"/></svg><span data-i="o1a">Vendas e caixa</span></li>
@@ -277,6 +308,7 @@ footer{padding-block:40px 96px;color:var(--muted);font-size:14px;border-top:1px 
         <article class="offer">
           <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg></div>
           <h3 data-i="o2t">Site para a sua empresa</h3>
+          <p class="hook" data-i="o2h">Seja encontrado. Passe confiança.</p>
           <p data-i="o2p">Sua empresa na internet, com o seu nome e a sua cara.</p>
           <ul>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"/></svg><span data-i="o2a">Endereço próprio (seunome.com)</span></li>
@@ -289,6 +321,7 @@ footer{padding-block:40px 96px;color:var(--muted);font-size:14px;border-top:1px 
         <article class="offer">
           <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></div>
           <h3 data-i="o3t">Aplicativo no celular</h3>
+          <p class="hook" data-i="o3h">Sua loja no seu bolso.</p>
           <p data-i="o3p">Um ícone na tela do celular, igual aos outros apps.</p>
           <ul>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"/></svg><span data-i="o3a">Veja tudo de onde estiver</span></li>
@@ -299,46 +332,49 @@ footer{padding-block:40px 96px;color:var(--muted);font-size:14px;border-top:1px 
           <div class="for" data-i="o3f" data-html><b>Ideal para:</b> donos que não ficam o dia todo na loja.</div>
         </article>
       </div>
-    </div>
-  </section>
-
-  <section class="block">
-    <div class="wrap proof">
-      <div class="head" style="margin:0">
-        <div class="eyebrow" data-i="p_eye">Experiência real</div>
-        <h2 data-i="p_t" data-html>Sistemas que já <em>trabalham todos os dias</em> no Suriname.</h2>
-        <p class="sub" data-i="p_p">Empresas que lidam com dinheiro, ouro e clientes todos os dias já confiam o controle do negócio a sistemas AurumSys.</p>
-      </div>
-      <div>
-        <ul class="sectors">
-          <li data-i="p1">Joalherias</li>
-          <li data-i="p2">Compra e venda de ouro</li>
-          <li data-i="p3">Casas de câmbio</li>
-          <li data-i="p4">Penhor</li>
-          <li data-i="p5">Depósitos de clientes</li>
-          <li data-i="p6">Estética automotiva</li>
-          <li data-i="p7">Venda de veículos</li>
-          <li data-i="p8">Internet e telecom</li>
-        </ul>
-        <div class="pillars">
-          <div class="pillar"><b data-i="pl1t">Atendimento direto</b><span data-i="pl1p">Você fala com quem faz o sistema, não com uma central.</span></div>
-          <div class="pillar"><b data-i="pl2t">Tecnologia de ponta</b><span data-i="pl2p">Hospedado na nuvem da Cloudflare, rápido e seguro.</span></div>
-          <div class="pillar"><b data-i="pl3t">Cópia de segurança</b><span data-i="pl3p">Seus dados guardados, mesmo se o celular quebrar.</span></div>
-          <div class="pillar"><b data-i="pl4t">Feito sob medida</b><span data-i="pl4p">O sistema se adapta a você, não o contrário.</span></div>
-        </div>
+      <div class="strip">
+        <p><span data-i="m_q">Não sabe qual escolher?</span><b data-i="m_t">Me conta o seu problema. Eu digo o que resolve.</b></p>
+        <a class="btn btn-wa" href="https://wa.me/5978641010" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3z"/></svg><span data-i="m_cta">Falar no WhatsApp</span></a>
       </div>
     </div>
   </section>
 
   <section class="block">
     <div class="wrap">
-      <div class="guarantee">
-        <div class="seal" aria-hidden="true"><div><b>2</b><span data-i="g_seal">meses</span></div></div>
-        <div>
-          <h3 data-i="g_t">Ajustes incluídos depois da entrega</h3>
-          <p data-i="g_p">Depois que o sistema fica pronto, você tem 2 meses de mudanças e correções sem custo extra. Você usa no dia a dia, me fala o que quer mudar, e eu ajusto.</p>
-        </div>
-        <a class="btn btn-wa" href="https://wa.me/5978641010" target="_blank" rel="noopener"><span data-i="g_cta">Começar agora</span></a>
+      <div class="head">
+        <div class="eyebrow" data-i="p_eye">Projetos reais</div>
+        <h2 data-i="p_t" data-html>Sistemas que já <em>trabalham todos os dias</em> no Suriname.</h2>
+        <p class="sub" data-i="p_p">Alguns exemplos do que já entreguei. Os nomes dos clientes ficam em sigilo.</p>
+      </div>
+      <div class="cases">
+        <article class="case"><span class="tag" data-i="k1g">Compra de ouro</span><h3 data-i="k1t">Preço certo na hora, sem calculadora</h3><dl><div><dt data-i="lbl_p">Problema</dt><dd data-i="k1p">Calcular o valor do ouro pelo teor e pela cotação do dia levava tempo e dava erro.</dd></div><div><dt data-i="lbl_s">Solução</dt><dd class="res" data-i="k1s">Sistema com cotação ao vivo que calcula o valor na hora e guarda cada compra.</dd></div></dl></article>
+        <article class="case"><span class="tag" data-i="k2g">Casa de câmbio</span><h3 data-i="k2t">O lucro de cada operação, na tela</h3><dl><div><dt data-i="lbl_p">Problema</dt><dd data-i="k2p">O dono não sabia quanto ganhava em cada troca entre dólar, USDT e outras moedas.</dd></div><div><dt data-i="lbl_s">Solução</dt><dd class="res" data-i="k2s">Programa que mostra o saldo de cada moeda e o lucro de cada venda, com relatório do dia, da semana e do mês.</dd></div></dl></article>
+        <article class="case"><span class="tag" data-i="k3g">Estética automotiva</span><h3 data-i="k3t">Fotos na chegada, sem discussão</h3><dl><div><dt data-i="lbl_p">Problema</dt><dd data-i="k3p">Clientes reclamavam de riscos que o carro já tinha antes de chegar.</dd></div><div><dt data-i="lbl_s">Solução</dt><dd class="res" data-i="k3s">Fotos do carro no tablet na entrada, e o dono acompanha em que etapa cada carro está.</dd></div></dl></article>
+        <article class="case"><span class="tag" data-i="k4g">Depósitos de clientes</span><h3 data-i="k4t">O saldo de cada cliente, sempre certo</h3><dl><div><dt data-i="lbl_p">Problema</dt><dd data-i="k4p">Muitos clientes deixam dinheiro guardado na loja e pedem saque por telefone.</dd></div><div><dt data-i="lbl_s">Solução</dt><dd class="res" data-i="k4s">Conta de cada cliente com resumo do dia na tela inicial e recibo para assinar em cada movimento.</dd></div></dl></article>
+      </div>
+      <div class="pillars wide">
+        <div class="pillar"><b data-i="pl1t">Atendimento direto</b><span data-i="pl1p">Você fala com quem faz o sistema, não com uma central.</span></div>
+        <div class="pillar"><b data-i="pl2t">Tecnologia de ponta</b><span data-i="pl2p">Hospedado na nuvem da Cloudflare, rápido e seguro.</span></div>
+        <div class="pillar"><b data-i="pl3t">Cópia de segurança</b><span data-i="pl3p">Seus dados guardados, mesmo se o celular quebrar.</span></div>
+        <div class="pillar"><b data-i="pl4t">Feito sob medida</b><span data-i="pl4p">O sistema se adapta a você, não o contrário.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow" data-i="g_eye">Sem risco</div>
+        <h2 data-i="g_h" data-html>Três promessas <em>para você ficar tranquilo.</em></h2>
+      </div>
+      <div class="guar3">
+        <div class="g"><div class="num">0</div><h3 data-i="g1t">Orçamento grátis</h3><p data-i="g1p">Você conta o que precisa e recebe o orçamento sem pagar nada e sem compromisso.</p></div>
+        <div class="g"><div class="num">1ª</div><h3 data-i="g2t">Você vê antes de tudo ficar pronto</h3><p data-i="g2p">Você testa a primeira versão em poucos dias e acompanha cada melhoria, versão por versão.</p></div>
+        <div class="g"><div class="num">2</div><h3 data-i="g3t">2 meses de ajustes incluídos</h3><p data-i="g3p">Depois da entrega, mudanças e correções sem custo extra durante dois meses.</p></div>
+      </div>
+      <div class="strip">
+        <p><span data-i="g_q">Pronto para organizar o seu negócio?</span><b data-i="g_t2">O primeiro passo é uma conversa, e ela é grátis.</b></p>
+        <a class="btn btn-wa" href="https://wa.me/5978641010" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3z"/></svg><span data-i="g_cta">Começar agora</span></a>
       </div>
     </div>
   </section>
@@ -369,6 +405,7 @@ footer{padding-block:40px 96px;color:var(--muted);font-size:14px;border-top:1px 
         <details><summary data-i="q3">E se eu perder o celular?</summary><p data-i="q3a">Seus dados não ficam no celular. Ficam guardados na internet, com cópia de segurança. Você entra de outro aparelho e está tudo lá.</p></details>
         <details><summary data-i="q4">Funciona com SRD, dólar e euro?</summary><p data-i="q4a">Sim. O programa pode trabalhar com várias moedas ao mesmo tempo.</p></details>
         <details><summary data-i="q5">Meus funcionários podem usar?</summary><p data-i="q5a">Sim. Cada funcionário tem o seu usuário e senha, e você escolhe o que cada um pode ver e fazer.</p></details>
+        <details><summary data-i="q7">Em quanto tempo fica pronto?</summary><p data-i="q7a">A primeira versão fica pronta em poucos dias, e você já pode usar. Depois vamos melhorando juntos, versão por versão.</p></details>
         <details><summary data-i="q6">Quanto custa?</summary><p data-i="q6a">Depende do que você precisa. Você paga uma vez para eu fazer, e depois uma mensalidade pequena para manter tudo funcionando e guardado. O orçamento é grátis e sem compromisso.</p></details>
       </div>
     </div>
@@ -382,6 +419,7 @@ footer{padding-block:40px 96px;color:var(--muted);font-size:14px;border-top:1px 
       <div class="cta">
         <a class="btn btn-wa" href="https://wa.me/5978641010" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3z"/></svg><span data-i="k_wa">Quero meu orçamento grátis</span></a>
       </div>
+      <div class="founder"><div class="avatar" aria-hidden="true">R</div><div><small data-i="f_role">Quem vai te atender</small><b>Rony · AurumSys</b><p data-i="f_p">Sou eu que converso com você, faço o sistema e te ensino a usar. Do primeiro contato até o suporte, você fala sempre com a mesma pessoa.</p></div></div>
       <div class="contacts">
         <div class="row"><div><span>WhatsApp</span><b>+597 864-1010</b></div><button class="copy" id="cp1" data-copy="+597 864-1010" data-i="copy">Copiar</button></div>
         <div class="row"><div><span>E-mail</span><b>ronnycacador@gmail.com</b></div><button class="copy" id="cp2" data-copy="ronnycacador@gmail.com" data-i="copy">Copiar</button></div>
@@ -395,38 +433,38 @@ footer{padding-block:40px 96px;color:var(--muted);font-size:14px;border-top:1px 
 <footer>
   <div class="wrap foot">
     <span>© 2026 AurumSys · All rights reserved.</span>
-    <span>aurumsys.net · v8</span>
+    <span>aurumsys.net · v9</span>
   </div>
 </footer>
 
 <script>
 const T={
-en:{nav_wa:"Free quote",h_eye:"Programs · Websites · Apps",h1:"Your business organized, <em>in the palm of your hand.</em>",h1p:"I build programs, websites and apps that are easy to use, made around the way you already work. You don't need to understand computers: I do everything and teach you.",cta1:"Get my free quote",cta2:"See what I do",micro:"No obligation. You talk directly to the person who builds your system.",t1:"Protected data",t2:"Works on your phone",t3:"EN · PT · NL",
+en:{nav_wa:"Free quote",h_eye:"Programs · Websites · Apps",h1:"Your business organized, <em>in the palm of your hand.</em>",h1p:"I build programs, websites and apps that are easy to use, made around the way you already work. You don't need to understand computers: I do everything and teach you.",cta1:"Get my free quote",cta2:"See what I do",t1:"Protected data",t2:"Works on your phone",t3:"EN · PT · NL",
 b0:"Today",b1:"Everything written in a notebook",b2:"Math done in your head",b3:"Not sure who owes you",b4:"Not sure how much you made this month",a0:"With AurumSys",a1:"Everything saved and secure",a2:"The program does the math",a3:"List of who owes, instantly",a4:"Today's and this month's profit on screen",
 c_eye:"Sound familiar?",c_t:"This is for you <em>if...</em>",c1:"You write sales and orders on paper",c2:"You waste time looking for information",c3:"You don't really know what comes in and goes out",c4:"You have customers who owe you money",c5:"You want people to find your business online",c6:"You want to check on your shop from anywhere",c_n:"If you checked even one, <em>I can help.</em>",
 o_eye:"What I do",o_t:"Three solutions. <em>One person responsible.</em>",o_p:"Pick one, or combine all three. All under your name, your brand and your way of working.",
 o1t:"A program for your business",o1p:"A system to organize your company's day to day.",o1a:"Sales and cash register",o1b:"Product stock",o1c:"Who paid and who owes",o1d:"Profit for the day and month",o1f:"<b>Ideal for:</b> shops, workshops, restaurants, salons, warehouses, lenders.",
 o2t:"A website for your business",o2p:"Your business online, with your name and your look.",o2a:"Your own address (yourname.com)",o2b:"Photos, prices and contact",o2c:"Button straight to WhatsApp",o2d:"In English, Portuguese and Dutch",o2f:"<b>Ideal for:</b> anyone who wants more customers and more trust.",
 o3t:"An app on your phone",o3p:"An icon on your phone screen, just like other apps.",o3a:"See everything from anywhere",o3b:"Photos and customer signature",o3c:"Works on phone and tablet",o3d:"No app store download needed",o3f:"<b>Ideal for:</b> owners who aren't at the shop all day.",
-p_eye:"Real experience",p_t:"Systems that already <em>work every day</em> in Suriname.",p_p:"Businesses that handle money, gold and customers every day already trust AurumSys systems to run their operations.",p1:"Jewelry stores",p2:"Gold buying & selling",p3:"Currency exchange",p4:"Pawn shops",p5:"Customer deposits",p6:"Car detailing",p7:"Vehicle sales",p8:"Internet & telecom",
+p_t:"Systems that already <em>work every day</em> in Suriname.",
 pl1t:"Direct service",pl1p:"You talk to the person who builds the system, not a call center.",pl2t:"Modern technology",pl2p:"Hosted on Cloudflare's cloud, fast and secure.",pl3t:"Backups",pl3p:"Your data stays safe, even if your phone breaks.",pl4t:"Made to measure",pl4p:"The system adapts to you, not the other way around.",
-g_seal:"months",g_t:"Adjustments included after delivery",g_p:"Once your system is ready, you get 2 months of changes and fixes at no extra cost. Use it day to day, tell me what you want changed, and I adjust it.",g_cta:"Start now",
+
 s_eye:"How it works",s_t:"That simple. <em>Three steps.</em>",s1t:"You tell me",s1p:"Message me on WhatsApp and explain how you work today. Text, voice message, or I come to you.",s2t:"I build it",s2p:"I set up the program or website with your name and logo. Within a few days you can try it.",s3t:"You use it",s3p:"I teach you how to use it and adjust whatever you need. Any question, just message me.",
 q_eye:"Questions",q_t:"Common questions",q1:"Do I need to understand computers?",q1a:"No. The programs are made to be simple, with big buttons and plain words. I teach you how to use them.",q2:"Do I need to install anything?",q2a:"No. It works in the browser on your phone, tablet or computer. Just open it and log in with your username and password.",q3:"What if I lose my phone?",q3a:"Your data isn't stored on the phone. It's saved online with a backup. Log in from another device and everything is there.",q4:"Does it work with SRD, dollars and euros?",q4a:"Yes. The program can work with several currencies at the same time.",q5:"Can my employees use it?",q5a:"Yes. Each employee gets their own username and password, and you choose what each one can see and do.",q6:"How much does it cost?",q6a:"It depends on what you need. You pay once for me to build it, then a small monthly fee to keep everything running and backed up. Quotes are free and with no obligation.",
-k_eye:"Next step",k_t:"Every day on paper is money <em>you're not seeing.</em>",k_p:"Send me a message about what you need. I'll reply, explain everything and give you a free quote.",k_wa:"Get my free quote",copy:"Copy",copied:"Copied"},
-nl:{nav_wa:"Gratis offerte",h_eye:"Programma's · Websites · Apps",h1:"Uw bedrijf georganiseerd, <em>in de palm van uw hand.</em>",h1p:"Ik maak programma's, websites en apps die makkelijk te gebruiken zijn, gebouwd rond hoe u nu al werkt. U hoeft niets van computers te weten: ik doe alles en leer het u.",cta1:"Vraag gratis offerte aan",cta2:"Bekijk wat ik doe",micro:"Vrijblijvend. U spreekt direct met degene die uw systeem bouwt.",t1:"Beveiligde gegevens",t2:"Werkt op uw telefoon",t3:"NL · EN · PT",
+k_eye:"Next step",k_t:"Every day on paper is money <em>you're not seeing.</em>",k_p:"Send me a message about what you need. I'll reply, explain everything and give you a free quote.",k_wa:"Get my free quote",copy:"Copy",copied:"Copied",micro:"No obligation. You talk directly to the person who builds your system. Serving all of Suriname and remote clients.",o1h:"Swap the notebook for a system.",o2h:"Get found. Build trust.",o3h:"Your shop in your pocket.",m_q:"Not sure which one you need?",m_t:"Tell me your problem. I'll tell you what solves it.",m_cta:"Message on WhatsApp",p_eye:"Real projects",p_p:"A few examples of what I've delivered. Client names are kept confidential.",lbl_p:"Problem",lbl_s:"Solution",k1g:"Gold buying",k1t:"The right price instantly, no calculator",k1p:"Working out gold value by purity and the day's price took time and caused mistakes.",k1s:"A system with a live price that calculates the value instantly and records every purchase.",k2g:"Currency exchange",k2t:"The profit of every trade, on screen",k2p:"The owner didn't know how much he made on each exchange between dollars, USDT and other currencies.",k2s:"A program that shows the balance of each currency and the profit on every sale, with daily, weekly and monthly reports.",k3g:"Car detailing",k3t:"Photos on arrival, no arguments",k3p:"Customers complained about scratches the car already had before it arrived.",k3s:"Photos of the car on a tablet at drop-off, and the owner sees which stage every car is in.",k4g:"Customer deposits",k4t:"Every customer's balance, always right",k4p:"Many customers keep money at the store and ask for withdrawals by phone.",k4s:"An account for each customer, a daily summary on the home screen and a receipt to sign for every movement.",g_eye:"No risk",g_h:"Three promises <em>so you can relax.</em>",g1t:"Free quote",g1p:"Tell me what you need and get a quote at no cost and with no obligation.",g2t:"You see it before it's finished",g2p:"You try the first version within days and follow every improvement, version by version.",g3t:"2 months of adjustments included",g3p:"After delivery, changes and fixes at no extra cost for two months.",g_q:"Ready to organize your business?",g_t2:"The first step is a conversation, and it's free.",g_cta:"Start now",q7:"How long does it take?",q7a:"The first version is ready within a few days and you can start using it. Then we improve it together, version by version.",f_role:"Who you'll talk to",f_p:"I'm the one who talks to you, builds your system and teaches you to use it. From the first message to support, you always deal with the same person."},
+nl:{nav_wa:"Gratis offerte",h_eye:"Programma's · Websites · Apps",h1:"Uw bedrijf georganiseerd, <em>in de palm van uw hand.</em>",h1p:"Ik maak programma's, websites en apps die makkelijk te gebruiken zijn, gebouwd rond hoe u nu al werkt. U hoeft niets van computers te weten: ik doe alles en leer het u.",cta1:"Vraag gratis offerte aan",cta2:"Bekijk wat ik doe",t1:"Beveiligde gegevens",t2:"Werkt op uw telefoon",t3:"NL · EN · PT",
 b0:"Nu",b1:"Alles in een schrift",b2:"Rekenen uit het hoofd",b3:"Niet weten wie nog moet betalen",b4:"Niet weten hoeveel winst deze maand",a0:"Met AurumSys",a1:"Alles veilig opgeslagen",a2:"Het programma rekent voor u",a3:"Direct zien wie nog moet betalen",a4:"Winst van vandaag en deze maand",
 c_eye:"Herkenbaar?",c_t:"Dit is voor u <em>als...</em>",c1:"U verkopen en bestellingen op papier schrijft",c2:"U tijd verliest met informatie zoeken",c3:"U niet goed weet wat er binnenkomt en uitgaat",c4:"U klanten heeft die nog moeten betalen",c5:"U wilt dat mensen uw bedrijf online vinden",c6:"U uw winkel van overal wilt bekijken",c_n:"Herkent u er één? <em>Dan kan ik u helpen.</em>",
 o_eye:"Wat ik doe",o_t:"Drie oplossingen. <em>Eén aanspreekpunt.</em>",o_p:"Kies er één, of combineer ze. Alles onder uw naam, uw merk en uw manier van werken.",
 o1t:"Een programma voor uw bedrijf",o1p:"Een systeem om uw dagelijkse zaken te regelen.",o1a:"Verkoop en kassa",o1b:"Voorraad",o1c:"Wie betaald heeft en wie nog moet",o1d:"Winst per dag en per maand",o1f:"<b>Ideaal voor:</b> winkels, werkplaatsen, restaurants, salons, magazijnen, geldverstrekkers.",
 o2t:"Een website voor uw bedrijf",o2p:"Uw bedrijf online, met uw naam en uw uitstraling.",o2a:"Eigen adres (uwnaam.com)",o2b:"Foto's, prijzen en contact",o2c:"Knop direct naar WhatsApp",o2d:"In het Nederlands, Engels en Portugees",o2f:"<b>Ideaal voor:</b> wie meer klanten en meer vertrouwen wil.",
 o3t:"Een app op uw telefoon",o3p:"Een icoon op uw telefoon, net als andere apps.",o3a:"Alles zien waar u ook bent",o3b:"Foto's en handtekening van de klant",o3c:"Werkt op telefoon en tablet",o3d:"Geen download uit de app-winkel nodig",o3f:"<b>Ideaal voor:</b> eigenaren die niet de hele dag in de zaak zijn.",
-p_eye:"Echte ervaring",p_t:"Systemen die <em>elke dag werken</em> in Suriname.",p_p:"Bedrijven die dagelijks met geld, goud en klanten werken vertrouwen hun administratie al toe aan AurumSys-systemen.",p1:"Juweliers",p2:"Goud in- en verkoop",p3:"Wisselkantoren",p4:"Pandhuizen",p5:"Klantendepots",p6:"Autodetailing",p7:"Autoverkoop",p8:"Internet & telecom",
+p_t:"Systemen die <em>elke dag werken</em> in Suriname.",
 pl1t:"Direct contact",pl1p:"U spreekt met degene die het systeem bouwt, niet met een callcenter.",pl2t:"Moderne technologie",pl2p:"Gehost in de Cloudflare-cloud, snel en veilig.",pl3t:"Back-ups",pl3p:"Uw gegevens blijven veilig, ook als uw telefoon kapotgaat.",pl4t:"Op maat gemaakt",pl4p:"Het systeem past zich aan u aan, niet andersom.",
-g_seal:"maanden",g_t:"Aanpassingen inbegrepen na oplevering",g_p:"Zodra uw systeem klaar is, krijgt u 2 maanden wijzigingen en correcties zonder extra kosten. Gebruik het dagelijks, vertel wat anders moet, en ik pas het aan.",g_cta:"Nu beginnen",
+
 s_eye:"Hoe het werkt",s_t:"Zo eenvoudig. <em>Drie stappen.</em>",s1t:"U vertelt het mij",s1p:"Stuur mij een WhatsApp en leg uit hoe u nu werkt. Tekst, spraakbericht, of ik kom langs.",s2t:"Ik maak het",s2p:"Ik maak het programma of de website met uw naam en logo. Binnen een paar dagen kunt u het proberen.",s3t:"U gebruikt het",s3p:"Ik leer u hoe het werkt en pas aan wat nodig is. Vragen? Stuur gewoon een bericht.",
 q_eye:"Vragen",q_t:"Veelgestelde vragen",q1:"Moet ik verstand hebben van computers?",q1a:"Nee. De programma's zijn eenvoudig, met grote knoppen en duidelijke woorden. Ik leer u hoe het werkt.",q2:"Moet ik iets installeren?",q2a:"Nee. Het werkt in de browser van uw telefoon, tablet of computer. Openen en inloggen, klaar.",q3:"Wat als ik mijn telefoon kwijtraak?",q3a:"Uw gegevens staan niet op de telefoon. Ze zijn online opgeslagen met een back-up. Log in op een ander toestel en alles is er nog.",q4:"Werkt het met SRD, dollar en euro?",q4a:"Ja. Het programma kan met meerdere valuta tegelijk werken.",q5:"Kunnen mijn medewerkers het gebruiken?",q5a:"Ja. Elke medewerker krijgt een eigen gebruikersnaam en wachtwoord, en u kiest wat iedereen mag zien en doen.",q6:"Wat kost het?",q6a:"Dat hangt af van wat u nodig heeft. U betaalt één keer voor het maken, daarna een klein maandbedrag om alles werkend en veilig te houden. De offerte is gratis en vrijblijvend.",
-k_eye:"Volgende stap",k_t:"Elke dag op papier is geld <em>dat u niet ziet.</em>",k_p:"Stuur mij een bericht over wat u nodig heeft. Ik antwoord, leg alles uit en geef u een gratis offerte.",k_wa:"Vraag gratis offerte aan",copy:"Kopiëren",copied:"Gekopieerd"}
+k_eye:"Volgende stap",k_t:"Elke dag op papier is geld <em>dat u niet ziet.</em>",k_p:"Stuur mij een bericht over wat u nodig heeft. Ik antwoord, leg alles uit en geef u een gratis offerte.",k_wa:"Vraag gratis offerte aan",copy:"Kopiëren",copied:"Gekopieerd",micro:"Vrijblijvend. U spreekt direct met degene die uw systeem bouwt. Voor heel Suriname en ook op afstand.",o1h:"Ruil het schrift in voor een systeem.",o2h:"Word gevonden. Wek vertrouwen.",o3h:"Uw zaak in uw broekzak.",m_q:"Weet u niet wat u nodig heeft?",m_t:"Vertel mij uw probleem. Ik zeg wat het oplost.",m_cta:"WhatsApp sturen",p_eye:"Echte projecten",p_p:"Enkele voorbeelden van wat ik heb opgeleverd. Namen van klanten blijven vertrouwelijk.",lbl_p:"Probleem",lbl_s:"Oplossing",k1g:"Goudinkoop",k1t:"Direct de juiste prijs, zonder rekenmachine",k1p:"De waarde van goud berekenen op gehalte en dagkoers kostte tijd en gaf fouten.",k1s:"Een systeem met live koers dat de waarde direct berekent en elke aankoop bewaart.",k2g:"Wisselkantoor",k2t:"De winst van elke transactie, op het scherm",k2p:"De eigenaar wist niet hoeveel hij verdiende op elke wissel tussen dollar, USDT en andere valuta.",k2s:"Een programma dat het saldo per valuta en de winst per verkoop toont, met dag-, week- en maandrapporten.",k3g:"Autodetailing",k3t:"Foto's bij aankomst, geen discussie",k3p:"Klanten klaagden over krassen die de auto al had voordat hij binnenkwam.",k3s:"Foto's van de auto op de tablet bij aankomst, en de eigenaar ziet in welke fase elke auto is.",k4g:"Klantendepots",k4t:"Het saldo van elke klant, altijd juist",k4p:"Veel klanten bewaren geld in de winkel en vragen telefonisch om opnames.",k4s:"Een rekening per klant, een dagoverzicht op het startscherm en een kwitantie om te tekenen bij elke boeking.",g_eye:"Zonder risico",g_h:"Drie beloftes <em>zodat u gerust bent.</em>",g1t:"Gratis offerte",g1p:"Vertel wat u nodig heeft en ontvang een offerte, gratis en vrijblijvend.",g2t:"U ziet het voordat het af is",g2p:"U probeert de eerste versie binnen enkele dagen en volgt elke verbetering, versie na versie.",g3t:"2 maanden aanpassingen inbegrepen",g3p:"Na oplevering twee maanden wijzigingen en correcties zonder extra kosten.",g_q:"Klaar om uw bedrijf te organiseren?",g_t2:"De eerste stap is een gesprek, en dat is gratis.",g_cta:"Nu beginnen",q7:"Hoe snel is het klaar?",q7a:"De eerste versie is binnen enkele dagen klaar en u kunt hem meteen gebruiken. Daarna verbeteren we samen, versie na versie.",f_role:"Met wie u praat",f_p:"Ik ben degene die met u praat, uw systeem bouwt en u leert ermee te werken. Van het eerste bericht tot de support spreekt u altijd met dezelfde persoon."}
 };
 const PT={};document.querySelectorAll("[data-i]").forEach(e=>{PT[e.dataset.i]=e.hasAttribute("data-html")?e.innerHTML:e.textContent});PT.copied="Copiado";T.pt=PT;
 let lang="pt";
