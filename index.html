@@ -10,200 +10,188 @@
 <meta property="og:description" content="Easy-to-use programs, websites and apps for your business · Suriname">
 <meta property="og:image" content="https://aurumsys.net/logo.png">
 <title>AurumSys</title>
-<meta name="description" content="AurumSys — programas, sites e aplicativos sob medida, simples de usar, para empresas no Suriname.">
+<meta name="description" content="AurumSys — programas, sites e aplicativos sob medida para negócios no Suriname.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
 <style>
-/* Layout: committed dark "private bank" look — serif headlines, generous space, thin rules, one blue accent and a green WhatsApp action repeated down the page */
+/* Layout: brand-led dark navy. Hero = "pick your business" + live phone preview. Circuit traces from the logo (yellow lines + square pads) link sections. Day timeline, real cases as a ledger, promises, founder, FAQ, CTA. */
 :root{
-  --bg:#000E26; --surface:#081936; --surface-2:#0E2244; --line:#1C3058; --line-soft:#12254A;
-  --fg:#F3F5F9; --muted:#A0ABC4; --blue:#FDC21E; --blue-2:#FFD04D; --blue-deep:#E0A700;
-  --wa:#22B35F; --wa-deep:#1A9A50; --warn:#F07A63; --white:#FFFFFF; --ink:#0A1428;
-  --f-display:"Fraunces",Georgia,"Times New Roman",serif;
+  --navy:#000E26; --navy-2:#06173A; --navy-3:#0C2150; --line:#1A2D5A; --line-2:#24396B;
+  --gold:#FDC21E; --gold-2:#FFD452; --white:#FFFFFF; --text:#E9EDF5; --muted:#93A0BD;
+  --wa:#22B35F; --wa-2:#1A9A50; --ok:#3DD68C; --bad:#FF7A6B;
+  --f-head:"Montserrat","Segoe UI",system-ui,sans-serif;
   --f-body:"Manrope","Segoe UI",system-ui,sans-serif;
-  --r:18px;
+  --f-mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+body{background:var(--navy);color:var(--text);font-family:var(--f-body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--navy)}
 a{color:inherit}
-:focus-visible{outline:2px solid var(--blue-2);outline-offset:3px;border-radius:8px}
-.wrap{max-width:1120px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
-h1,h2,h3{font-family:var(--f-display);font-weight:500;line-height:1.08;letter-spacing:-.015em;text-wrap:balance;margin:0}
-h2{font-size:clamp(32px,4.6vw,52px)}
-h2 em,h1 em{font-style:italic;color:var(--blue-2)}
-.eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-2);display:flex;align-items:center;gap:12px}
-.eyebrow::before{content:"";width:28px;height:1px;background:var(--blue-2)}
-.sub{color:var(--muted);font-size:18px;margin:16px 0 0;max-width:58ch}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-head);color:var(--white);letter-spacing:-.025em;line-height:1.02;margin:0;text-wrap:balance}
+h2{font-size:clamp(34px,5vw,58px);font-weight:900;text-transform:uppercase;letter-spacing:-.01em;line-height:.98}
+h2 .y,h1 .y{color:var(--gold)}
+.kicker{font-family:var(--f-mono);font-size:13px;color:var(--gold);letter-spacing:.06em;display:flex;align-items:center;gap:10px}
+.kicker::before{content:"";width:10px;height:10px;border:2px solid var(--gold);border-radius:3px}
+.lead{color:var(--muted);font-size:18px;max-width:54ch;margin:16px 0 0}
 
 /* header */
-header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line-soft)}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;height:70px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--f-body);font-weight:800;font-size:20px;letter-spacing:-.02em}
-.brand .s{color:var(--blue);font-weight:600}
-.brand img{height:40px;width:auto;display:block}
-@media (max-width:420px){.brand img{height:32px}}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:rgba(0,14,38,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;height:72px}
+.brand img{height:42px;width:auto;display:block}
+@media (max-width:440px){.brand img{height:32px}}
 .nav-r{display:flex;align-items:center;gap:10px}
-.lang{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px}
-.lang button{border:0;background:none;color:var(--muted);font:700 12.5px var(--f-body);padding:6px 10px;border-radius:999px;cursor:pointer}
-.lang button[aria-pressed="true"]{background:var(--surface-2);color:var(--fg)}
-
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:999px;padding:17px 28px;font-weight:700;font-size:17px;text-decoration:none;border:1px solid transparent;cursor:pointer;font-family:var(--f-body);line-height:1.2;transition:transform .15s,background .15s}
-.btn:hover{transform:translateY(-1px)}
+.lang{display:flex;border:1px solid var(--line-2);border-radius:8px;overflow:hidden}
+.lang button{border:0;background:none;color:var(--muted);font:700 12px var(--f-mono);padding:8px 10px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--gold);color:var(--navy)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:10px;padding:17px 26px;font:800 15px var(--f-head);letter-spacing:.02em;text-transform:uppercase;text-decoration:none;border:2px solid transparent;cursor:pointer;line-height:1.1;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-2px)}
 .btn svg{width:22px;height:22px;flex-shrink:0}
-.btn-wa{background:var(--wa);color:var(--white);box-shadow:0 10px 30px -12px rgba(34,179,95,.7)}
-.btn-wa:hover{background:var(--wa-deep)}
-.btn-line{border-color:var(--line);color:var(--fg);background:transparent}
-.btn-line:hover{border-color:var(--blue-2)}
-.nav .btn{padding:10px 18px;font-size:14.5px;box-shadow:none}
-@media (max-width:540px){.nav .btn span{display:none}.nav .btn{padding:10px 12px}}
-.micro{margin:14px 0 0;font-size:14px;color:var(--muted)}
+.btn-wa{background:var(--wa);color:var(--white)}
+.btn-wa:hover{background:var(--wa-2)}
+.btn-ghost{border-color:var(--line-2);color:var(--white)}
+.btn-ghost:hover{border-color:var(--gold)}
+.nav .btn{padding:11px 16px;font-size:13px}
+@media (max-width:560px){.nav .btn span{display:none}.nav .btn{padding:10px 12px}}
+
+/* circuit motif */
+.trace{position:absolute;pointer-events:none;color:var(--gold)}
+.trace path{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.trace rect{fill:currentColor}
+.pulse{fill:#FFD452;filter:drop-shadow(0 0 6px #FDC21E)}
 
 /* hero */
-.hero{position:relative;padding-block:72px 80px;overflow:hidden}
-.hero::after{content:"";position:absolute;right:-20%;top:-30%;width:70%;aspect-ratio:1;max-width:100%;background:radial-gradient(closest-side,rgba(253,194,30,.12),transparent 70%);pointer-events:none}
-.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
-.hero h1{font-size:clamp(44px,6.8vw,82px);margin:20px 0 0}
-.hero .sub{font-size:clamp(18px,1.7vw,21px);margin:24px 0 34px}
-.cta{display:flex;flex-wrap:wrap;gap:12px}
-.trust{display:flex;flex-wrap:wrap;gap:10px 26px;margin:30px 0 0;color:var(--fg);font-size:15px;font-weight:600;list-style:none;padding:24px 0 0;border-top:1px solid var(--line-soft)}
-.trust li{display:flex;align-items:center;gap:9px}
-.trust li svg{width:18px;height:18px;color:var(--blue-2);flex-shrink:0}
-@media (max-width:920px){.hero-grid{grid-template-columns:1fr}.hero{padding-block:48px 64px}}
+.hero{position:relative;overflow:hidden;padding-block:56px 72px}
+.hero .trace{right:-40px;top:20px;width:520px;height:420px;max-width:100%;opacity:.22}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr 380px;gap:56px;align-items:center}
+.hero-grid>div{min-width:0}
+.hero h1{font-size:clamp(42px,6.4vw,82px);font-weight:900;text-transform:uppercase;line-height:.95;letter-spacing:-.02em;margin:20px 0 0}
+.hero .lead{font-size:clamp(18px,1.7vw,20px);margin:22px 0 0}
+.picker{margin:30px 0 0}
+.picker p{margin:0 0 12px;font-weight:700;color:var(--white)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1.5px solid var(--line-2);background:var(--navy-2);color:var(--text);border-radius:10px;padding:11px 15px;font:700 15px var(--f-body);cursor:pointer;display:flex;align-items:center;gap:8px;transition:border-color .15s,background .15s}
+.chip:hover{border-color:var(--gold)}
+.chip[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.chip i{font-style:normal;font-size:17px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.micro{margin:14px 0 0;font-size:14px;color:var(--muted)}
+@media (max-width:980px){.hero-grid{grid-template-columns:1fr}.phone-wrap{justify-self:center}}
 
-/* before/after */
-.ba{display:grid;gap:14px}
-.ba-card{border-radius:var(--r);padding:24px;border:1px solid var(--line);min-width:0}
-.ba-card.before{background:var(--surface)}
-.ba-card.after{background:linear-gradient(140deg,#FFD04D,#F2B100);border-color:transparent;box-shadow:0 30px 60px -30px rgba(253,194,30,.55)}
-.ba-card .lbl{font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px;opacity:.75}
-.ba-card ul{list-style:none;margin:0;padding:0;display:grid;gap:11px;font-size:16px;font-weight:600}
-.ba-card li{display:flex;gap:12px;align-items:center;line-height:1.35}
-.ba-card li i{font-style:normal;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:12px;flex-shrink:0;font-weight:800}
-.before li{color:var(--muted)}
-.before li i{background:rgba(232,115,94,.14);color:var(--warn)}
-.after li i{background:rgba(10,20,40,.14);color:var(--ink)}
-.after{color:var(--ink)}
+/* phone */
+.phone-wrap{position:relative;width:100%;max-width:360px;justify-self:end}
+.phone{position:relative;border-radius:44px;padding:12px;background:linear-gradient(160deg,#1B2C55,#0A1631);box-shadow:0 0 0 1.5px #2B4280,0 40px 80px -30px rgba(0,0,0,.8),0 0 120px -40px rgba(253,194,30,.35)}
+.screen{border-radius:34px;background:#F4F6FA;color:#0B1530;overflow:hidden;min-height:580px;display:flex;flex-direction:column}
+.notch{height:30px;display:flex;justify-content:center;align-items:center}
+.notch span{width:90px;height:22px;border-radius:999px;background:#0A1631}
+.app-head{padding:8px 20px 14px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.app-head b{font-family:var(--f-head);font-size:17px;font-weight:800;letter-spacing:-.01em;color:#0B1530}
+.app-head small{display:block;font-size:12px;color:#5B6788;font-weight:600}
+.app-ico{width:36px;height:36px;border-radius:10px;background:#000E26;display:grid;place-items:center;font-size:18px;flex-shrink:0}
+.big{margin:0 14px;border-radius:20px;background:#000E26;color:#fff;padding:18px}
+.big small{font-size:12px;color:#9FB0D6;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.big .num{font-family:var(--f-head);font-weight:900;font-size:32px;letter-spacing:-.02em;line-height:1.1;margin-top:4px;font-variant-numeric:tabular-nums}
+.big .trend{font-size:13px;font-weight:700;color:var(--ok)}
+.bars{display:flex;align-items:flex-end;gap:6px;height:62px;margin-top:14px}
+.bars i{flex:1;border-radius:4px 4px 2px 2px;background:#22396F;transition:height .5s}
+.bars i:last-child{background:var(--gold)}
+.rows{padding:14px 14px 18px;display:grid;gap:8px}
+.r{display:flex;align-items:center;gap:12px;background:#fff;border-radius:14px;padding:12px 14px;box-shadow:0 1px 0 #E3E8F2}
+.r .d{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.r .d.g{background:#1FAE62}.r .d.y{background:#F2B100}.r .d.r2{background:#E5533F}
+.r span{flex:1;font-size:14px;font-weight:600;min-width:0}
+.r b{font-size:13.5px;font-weight:800;white-space:nowrap;font-variant-numeric:tabular-nums}
+.ex{position:absolute;left:50%;bottom:-14px;transform:translateX(-50%);background:var(--gold);color:var(--navy);font:800 11px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:6px;white-space:nowrap}
+.screen.swap .big,.screen.swap .rows{animation:fade .35s ease}
+@keyframes fade{from{opacity:.2;transform:translateY(6px)}}
 
-section.block{padding-block:96px;border-top:1px solid var(--line-soft)}
-.head{margin-bottom:44px;display:grid;gap:14px}
+/* sections */
+section.sec{position:relative;padding-block:100px;border-top:1px solid var(--line)}
+section.sec::before{content:"";position:absolute;top:-6px;left:max(20px,calc(50% - 560px));width:12px;height:12px;background:var(--gold);border-radius:3px}
+.head{display:grid;gap:14px;margin-bottom:48px;max-width:780px}
 
-/* checklist */
-.checks{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-soft);border:1px solid var(--line-soft);border-radius:var(--r);overflow:hidden;list-style:none;margin:0;padding:0}
-.checks li{display:flex;flex-direction:column;gap:14px;background:var(--bg);padding:26px;font-weight:600;font-size:17px;min-width:0;line-height:1.4}
-.checks li b{width:42px;height:42px;border-radius:12px;border:1px solid var(--line);color:var(--blue-2);display:grid;place-items:center}
-.checks li b svg{width:20px;height:20px}
-.checks-note{margin:28px 0 0;font-family:var(--f-display);font-size:clamp(22px,2.4vw,28px)}
-.checks-note em{color:var(--blue-2)}
-@media (max-width:900px){.checks{grid-template-columns:1fr 1fr}}
-@media (max-width:560px){.checks{grid-template-columns:1fr}.checks li{flex-direction:row;align-items:center}}
+/* day timeline */
+.day{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);position:relative}
+.day::before{content:"";position:absolute;left:0;right:0;top:24px;height:2px;background:repeating-linear-gradient(90deg,var(--gold) 0 14px,transparent 14px 22px);opacity:.6}
+.day li{position:relative;padding:0 20px 0 0;min-width:0}
+.day time{position:relative;display:inline-block;font-family:var(--f-mono);font-size:15px;color:var(--navy);background:var(--gold);padding:12px 14px;border-radius:10px;font-weight:500}
+.day h3{font-size:21px;font-weight:800;margin:22px 0 8px;letter-spacing:-.01em}
+.day p{margin:0;color:var(--muted);font-size:16px}
+@media (max-width:900px){.day{grid-template-columns:1fr;gap:28px}.day::before{left:34px;right:auto;top:0;bottom:0;width:2px;height:auto;background:repeating-linear-gradient(180deg,var(--gold) 0 14px,transparent 14px 22px)}.day li{padding:0}.day h3,.day p{padding-left:0;background:var(--navy);position:relative}}
 
-/* offers */
-.offers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.offer{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:30px;display:flex;flex-direction:column;gap:12px;min-width:0}
-.offer .ic{width:54px;height:54px;border-radius:16px;background:var(--surface-2);border:1px solid var(--line);color:var(--blue-2);display:grid;place-items:center;margin-bottom:6px}
-.offer .ic svg{width:26px;height:26px}
-.offer h3{font-size:27px}
-.offer p{margin:0;color:var(--muted)}
-.offer ul{margin:6px 0 0;padding:0;list-style:none;display:grid;gap:9px;font-weight:600;font-size:16px}
-.offer ul li{display:flex;gap:10px;align-items:center}
-.offer ul li svg{width:16px;height:16px;color:var(--blue-2);flex-shrink:0}
-.offer .for{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);font-size:14.5px;color:var(--muted)}
-.offer .for b{color:var(--fg)}
-@media (max-width:920px){.offers{grid-template-columns:1fr}}
+/* services */
+.svc{display:grid;grid-template-columns:repeat(3,1fr);border:1.5px solid var(--line-2);border-radius:20px;overflow:hidden}
+.svc article{padding:34px 30px;min-width:0;display:flex;flex-direction:column;gap:12px}
+.svc article+article{border-left:1.5px solid var(--line-2)}
+.svc .ix{font-family:var(--f-mono);color:var(--gold);font-size:13px}
+.svc h3{font-size:26px;font-weight:900;text-transform:uppercase;line-height:1}
+.svc p{margin:0;color:var(--muted)}
+.svc ul{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:9px;font-weight:600}
+.svc li{display:flex;gap:10px;align-items:center}
+.svc li::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--gold);flex-shrink:0}
+@media (max-width:900px){.svc{grid-template-columns:1fr}.svc article+article{border-left:0;border-top:1.5px solid var(--line-2)}}
 
-/* proof */
-.proof{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:start}
-.sectors{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:0;padding:0}
-.sectors li{border:1px solid var(--line);border-radius:999px;padding:11px 18px;font-weight:600;font-size:15.5px;background:var(--surface)}
-.pillars{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
-.pillar{border-top:1px solid var(--line);padding-top:16px;min-width:0}
-.pillar b{display:block;font-size:16.5px;margin-bottom:4px}
-.pillar span{color:var(--muted);font-size:15px}
-@media (max-width:900px){.proof{grid-template-columns:1fr;gap:28px}}
-@media (max-width:520px){.pillars{grid-template-columns:1fr}}
+/* ledger of cases */
+.ledger{border-top:1.5px solid var(--line-2)}
+.lrow{display:grid;grid-template-columns:220px 1fr 1fr;gap:28px;padding:28px 0;border-bottom:1.5px solid var(--line-2);align-items:start}
+.lrow dl{margin:0;min-width:0}
+.lrow .sector{font-family:var(--f-head);font-weight:900;text-transform:uppercase;font-size:20px;color:var(--white);line-height:1.1}
+.lrow .sector small{display:block;font-family:var(--f-mono);font-weight:500;font-size:12px;color:var(--gold);text-transform:none;margin-bottom:6px}
+.lrow dt{font-family:var(--f-mono);font-size:12px;color:var(--muted);margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em}
+.lrow dd{margin:0}
+.lrow .res dd{color:var(--white);font-weight:600}
+.lrow .res dt{color:var(--gold)}
+@media (max-width:820px){.lrow{grid-template-columns:1fr;gap:12px}}
 
-/* guarantee */
-.guarantee{display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:26px;padding:clamp(26px,4vw,44px)}
-.seal{width:112px;height:112px;border-radius:50%;border:1px solid var(--blue-2);display:grid;place-items:center;text-align:center;position:relative}
-.seal::before{content:"";position:absolute;inset:7px;border-radius:50%;border:1px dashed color-mix(in srgb,var(--blue-2) 50%,transparent)}
-.seal b{font-family:var(--f-display);font-size:38px;font-weight:600;line-height:1;color:var(--blue-2);display:block}
-.seal span{font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.guarantee h3{font-size:clamp(24px,2.8vw,32px);margin-bottom:8px}
-.guarantee p{margin:0;color:var(--muted);max-width:56ch}
-@media (max-width:860px){.guarantee{grid-template-columns:1fr;text-align:left}.guarantee .btn{justify-self:start}}
-
-/* steps */
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;list-style:none;margin:0;padding:0;counter-reset:s}
-.steps li{border-top:1px solid var(--line);padding-top:24px;min-width:0;counter-increment:s}
-.steps li::before{content:"0" counter(s);display:block;font-family:var(--f-display);font-size:44px;color:var(--blue-2);line-height:1;margin-bottom:16px}
-.steps h3{font-size:24px;margin-bottom:8px}
-.steps p{margin:0;color:var(--muted)}
-@media (max-width:820px){.steps{grid-template-columns:1fr;gap:28px}}
+/* promises + founder */
+.prom{display:grid;grid-template-columns:1.2fr 1fr;gap:20px;align-items:stretch}
+.plist{display:grid;gap:12px}
+.p{display:grid;grid-template-columns:64px 1fr;gap:18px;align-items:center;background:var(--navy-2);border:1.5px solid var(--line);border-radius:16px;padding:20px}
+.p>div{min-width:0}
+.p .n{width:64px;height:64px;border-radius:14px;background:var(--gold);color:var(--navy);display:grid;place-items:center;font:900 22px var(--f-head)}
+.p h3{font-size:19px;font-weight:800;margin-bottom:4px;letter-spacing:-.01em}
+.p p{margin:0;color:var(--muted);font-size:15.5px}
+.founder{background:var(--gold);color:var(--navy);border-radius:20px;padding:32px;display:flex;flex-direction:column;gap:16px;position:relative;overflow:hidden}
+.founder .trace{color:var(--navy);opacity:.12;right:-30px;bottom:-20px;width:300px;height:220px}
+.founder small{font:500 13px var(--f-mono);position:relative}
+.founder h3{color:var(--navy);font-size:40px;font-weight:900;text-transform:uppercase;line-height:1;position:relative}
+.founder p{margin:0;font-weight:600;font-size:17px;position:relative}
+.founder .btn{align-self:flex-start;position:relative;background:var(--navy);color:var(--white)}
+@media (max-width:900px){.prom{grid-template-columns:1fr}}
 
 /* faq */
-.faq{display:grid;gap:0;max-width:860px;border-top:1px solid var(--line)}
-.faq details{border-bottom:1px solid var(--line)}
-.faq summary{cursor:pointer;list-style:none;padding:22px 0;font-weight:700;font-size:18.5px;display:flex;justify-content:space-between;gap:16px;align-items:center}
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start}
+.faq details{background:var(--navy-2);border:1.5px solid var(--line);border-radius:14px}
+.faq summary{cursor:pointer;list-style:none;padding:18px 20px;font-weight:700;font-size:17px;display:flex;justify-content:space-between;gap:14px;align-items:center;color:var(--white)}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";font-size:28px;font-weight:400;color:var(--blue-2);line-height:1;flex-shrink:0;transition:transform .2s}
+.faq summary::after{content:"+";font:800 24px var(--f-head);color:var(--gold);flex-shrink:0;transition:transform .2s}
+.faq details[open]{border-color:var(--gold)}
 .faq details[open] summary::after{transform:rotate(45deg)}
-.faq details p{margin:0;padding:0 0 22px;color:var(--muted);max-width:66ch}
+.faq details p{margin:0;padding:0 20px 20px;color:var(--muted)}
+@media (max-width:820px){.faq{grid-template-columns:1fr}}
 
-/* final cta */
-.final{text-align:center;display:grid;justify-items:center;gap:18px}
-.final h2{font-size:clamp(36px,5.4vw,64px);max-width:18ch}
-.final .sub{margin:0 auto}
-.final .cta{justify-content:center;margin-top:10px}
-.contacts{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:22px}
-.contacts .row{display:flex;align-items:center;gap:14px;border:1px solid var(--line);border-radius:14px;padding:12px 14px 12px 18px;min-width:0;text-align:left}
-.contacts .row span{font-size:11.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:block}
-.contacts .row b{font-weight:700;font-size:16.5px;user-select:all;word-break:break-all}
-.copy{border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:10px;padding:8px 13px;font:700 13.5px var(--f-body);cursor:pointer;flex-shrink:0}
-.copy:hover{border-color:var(--blue-2)}
+/* final */
+.final{position:relative;overflow:hidden;background:var(--gold);color:var(--navy);border-radius:26px;padding:clamp(32px,6vw,72px)}
+.final .trace{color:var(--navy);opacity:.14;right:-60px;top:-20px;width:560px;height:360px}
+.final h2{color:var(--navy);font-size:clamp(34px,5.6vw,70px);max-width:15ch;position:relative}
+.final p{position:relative;font-weight:600;font-size:19px;max-width:48ch;margin:18px 0 28px}
+.final .cta{position:relative;margin-top:0}
+.final .btn-ghost{border-color:var(--navy);color:var(--navy)}
+.contacts{position:relative;display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:28px;font-family:var(--f-mono);font-size:15px}
+.contacts span{opacity:.65;margin-right:6px}
+.contacts b{font-weight:500;user-select:all;word-break:break-all}
+.copy{border:1.5px solid var(--navy);background:none;color:var(--navy);border-radius:6px;padding:3px 8px;font:700 12px var(--f-body);cursor:pointer;margin-left:8px}
 
-/* floating whatsapp */
-.float{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:8;width:60px;height:60px;border-radius:50%;background:var(--wa);color:var(--white);display:grid;place-items:center;box-shadow:0 14px 34px -10px rgba(34,179,95,.8);text-decoration:none}
+.float{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:8;width:60px;height:60px;border-radius:16px;background:var(--wa);color:var(--white);display:grid;place-items:center;box-shadow:0 14px 34px -10px rgba(34,179,95,.8);text-decoration:none}
 .float svg{width:30px;height:30px}
-.float:hover{background:var(--wa-deep)}
+footer{padding-block:40px 100px;color:var(--muted);font-size:14px}
+.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:var(--f-mono);font-size:13px}
 
-footer{padding-block:40px 96px;color:var(--muted);font-size:14px;border-top:1px solid var(--line-soft)}
-.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-
-
-/* v9 additions */
-.offer .hook{font-family:var(--f-display);font-style:italic;color:var(--blue-2);font-size:19px;line-height:1.3;margin:0}
-.strip{margin-top:28px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 24px;border:1px solid var(--line);border-radius:20px;padding:22px 26px;background:var(--surface)}
-.strip p{margin:0;font-weight:700;font-size:18px}
-.strip p span{color:var(--muted);font-weight:500;display:block;font-size:15.5px}
-.cases{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.case{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:28px;display:grid;gap:14px;min-width:0}
-.case .tag{justify-self:start;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);background:var(--blue);border-radius:999px;padding:5px 12px}
-.case h3{font-size:24px}
-.case dl{margin:0;display:grid;gap:10px}
-.case dt{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.case dd{margin:2px 0 0;font-size:16px}
-.case dd.res{color:var(--fg);font-weight:600}
-@media (max-width:820px){.cases{grid-template-columns:1fr}}
-.pillars.wide{grid-template-columns:repeat(4,1fr);margin-top:36px}
-@media (max-width:900px){.pillars.wide{grid-template-columns:1fr 1fr}}
-@media (max-width:520px){.pillars.wide{grid-template-columns:1fr}}
-.guar3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.g{border:1px solid var(--line);border-radius:22px;padding:28px;background:var(--surface);min-width:0;display:grid;gap:10px;align-content:start}
-.g .num{font-family:var(--f-display);font-size:40px;line-height:1;color:var(--blue-2)}
-.g h3{font-size:22px}
-.g p{margin:0;color:var(--muted)}
-@media (max-width:860px){.guar3{grid-template-columns:1fr}}
-.founder{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;border:1px solid var(--line);border-radius:22px;padding:24px 26px;background:var(--surface);max-width:640px;margin:26px auto 0;text-align:left}
-.avatar{width:72px;height:72px;border-radius:50%;background:linear-gradient(140deg,#FFD04D,#F2B100);color:var(--ink);display:grid;place-items:center;font-family:var(--f-display);font-size:32px;font-weight:600}
-.founder b{display:block;font-size:18px}
-.founder small{display:block;color:var(--blue-2);font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
-.founder p{margin:0;color:var(--muted);font-size:15.5px}
-@media (max-width:520px){.founder{grid-template-columns:1fr}}
-@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
@@ -226,257 +214,214 @@ footer{padding-block:40px 96px;color:var(--muted);font-size:14px;border-top:1px 
 
 <main id="top">
   <section class="hero">
+    <svg class="trace" viewBox="0 0 520 420" aria-hidden="true"><path id="tp" d="M10 60 H180 L240 120 H400 L460 180 V320 L500 360"/><path d="M180 60 V10 M240 120 V260 L300 320 H380"/><rect x="2" y="52" width="16" height="16" rx="3"/><rect x="172" y="2" width="16" height="16" rx="3"/><rect x="372" y="312" width="16" height="16" rx="3"/><rect x="492" y="352" width="16" height="16" rx="3"/><circle class="pulse" r="5"><animateMotion dur="5s" repeatCount="indefinite"><mpath href="#tp"/></animateMotion></circle></svg>
     <div class="wrap hero-grid">
       <div>
-        <div class="eyebrow" data-i="h_eye">Programas · Sites · Aplicativos</div>
-        <h1 data-i="h1" data-html>Seu negócio organizado, <em>na palma da mão.</em></h1>
-        <p class="sub" data-i="h1p">Eu crio programas, sites e aplicativos simples de usar, feitos para o jeito que você já trabalha. Você não precisa entender de computador: eu faço tudo e te ensino.</p>
+        <div class="kicker" data-i="h_k">software sob medida · suriname</div>
+        <h1 data-i="h1">Seu negócio <span class="y">no seu celular.</span></h1>
+        <p class="lead" data-i="h1p">Programas, sites e aplicativos fáceis de usar, feitos para o jeito que você já trabalha. Você não precisa entender de computador.</p>
+        <div class="picker">
+          <p data-i="pick">Qual é o seu negócio? Toque e veja como fica:</p>
+          <div class="chips" role="group" aria-label="Tipo de negócio">
+            <button class="chip" id="b-shop" data-b="shop" aria-pressed="true"><i aria-hidden="true">🛒</i><span data-i="n_shop">Loja</span></button>
+            <button class="chip" id="b-garage" data-b="garage" aria-pressed="false"><i aria-hidden="true">🔧</i><span data-i="n_garage">Oficina</span></button>
+            <button class="chip" id="b-food" data-b="food" aria-pressed="false"><i aria-hidden="true">🍽️</i><span data-i="n_food">Restaurante</span></button>
+            <button class="chip" id="b-salon" data-b="salon" aria-pressed="false"><i aria-hidden="true">✂️</i><span data-i="n_salon">Salão</span></button>
+            <button class="chip" id="b-fx" data-b="fx" aria-pressed="false"><i aria-hidden="true">💱</i><span data-i="n_fx">Câmbio</span></button>
+            <button class="chip" id="b-gold" data-b="gold" aria-pressed="false"><i aria-hidden="true">🥇</i><span data-i="n_gold">Ouro</span></button>
+          </div>
+        </div>
         <div class="cta">
-          <a class="btn btn-wa" href="https://wa.me/5978641010" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3z"/></svg><span data-i="cta1">Quero meu orçamento grátis</span></a>
-          <a class="btn btn-line" href="#o-que-eu-faco" data-i="cta2">Ver o que eu faço</a>
+          <a class="btn btn-wa" href="https://wa.me/5978641010" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3z"/></svg><span data-i="cta1">Quero um desses</span></a>
         </div>
-        <p class="micro" data-i="micro">Sem compromisso. Você fala direto com quem desenvolve o sistema. Atendo em todo o Suriname e também à distância.</p>
-        <ul class="trust">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.4-3 7.7-7 9-4-1.3-7-4.6-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span data-i="t1">Dados protegidos</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg><span data-i="t2">Funciona no celular</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 12a8 8 0 1 1 3 6.2L4 20l1-3.3"/></svg><span data-i="t3">PT · EN · NL</span></li>
-        </ul>
+        <p class="micro" data-i="micro">Orçamento grátis e sem compromisso. Você fala direto comigo, que faço o sistema.</p>
       </div>
 
-      <div class="ba" aria-label="Antes e depois">
-        <div class="ba-card before">
-          <div class="lbl" data-i="b0">Hoje</div>
-          <ul>
-            <li><i>✕</i><span data-i="b1">Tudo anotado no caderno</span></li>
-            <li><i>✕</i><span data-i="b2">Contas feitas de cabeça</span></li>
-            <li><i>✕</i><span data-i="b3">Não sabe quem está devendo</span></li>
-            <li><i>✕</i><span data-i="b4">Não sabe quanto lucrou no mês</span></li>
-          </ul>
+      <div class="phone-wrap">
+        <div class="phone">
+          <div class="screen" id="screen" aria-live="polite">
+            <div class="notch"><span></span></div>
+            <div class="app-head"><div><b id="ph-name">—</b><small id="ph-date">—</small></div><div class="app-ico" id="ph-ico" aria-hidden="true">🛒</div></div>
+            <div class="big"><small id="ph-l">—</small><div class="num" id="ph-n">—</div><div class="trend" id="ph-t">—</div><div class="bars" id="ph-bars"></div></div>
+            <div class="rows" id="ph-rows"></div>
+          </div>
         </div>
-        <div class="ba-card after">
-          <div class="lbl" data-i="a0">Com a AurumSys</div>
-          <ul>
-            <li><i>✓</i><span data-i="a1">Tudo guardado e seguro</span></li>
-            <li><i>✓</i><span data-i="a2">O programa faz as contas</span></li>
-            <li><i>✓</i><span data-i="a3">Lista de quem deve, na hora</span></li>
-            <li><i>✓</i><span data-i="a4">Lucro do dia e do mês na tela</span></li>
-          </ul>
-        </div>
+        <div class="ex" data-i="ex">Exemplo de tela</div>
       </div>
     </div>
   </section>
 
-  <section class="block">
+  <section class="sec">
     <div class="wrap">
       <div class="head">
-        <div class="eyebrow" data-i="c_eye">Você se reconhece?</div>
-        <h2 data-i="c_t" data-html>Isso é para você <em>se...</em></h2>
+        <div class="kicker" data-i="d_k">um dia com a aurumsys</div>
+        <h2 data-i="d_t">Do caderno <span class="y">para o sistema.</span></h2>
+        <p class="lead" data-i="d_p">Veja como muda o seu dia quando tudo está num só lugar.</p>
       </div>
-      <ul class="checks">
-        <li><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 4h11l3 3v13H5z"/><path d="M8 10h8M8 14h8M8 18h5"/></svg></b><span data-i="c1">Você anota vendas e pedidos no papel</span></li>
-        <li><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></b><span data-i="c2">Perde tempo procurando informação</span></li>
-        <li><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3v18M16.5 7.5c0-1.7-2-3-4.5-3s-4.5 1.3-4.5 3S9.5 10.5 12 11s4.5 1.3 4.5 3.2-2 3.3-4.5 3.3-4.5-1.3-4.5-3"/></svg></b><span data-i="c3">Não sabe direito quanto entra e quanto sai</span></li>
-        <li><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5M17 11l2 2 3.5-4"/></svg></b><span data-i="c4">Tem clientes que ficam devendo</span></li>
-        <li><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg></b><span data-i="c5">Quer que as pessoas achem sua empresa na internet</span></li>
-        <li><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></b><span data-i="c6">Quer ver como está a loja mesmo longe dela</span></li>
-      </ul>
-      <p class="checks-note" data-i="c_n" data-html>Se marcou pelo menos um, <em>eu posso te ajudar.</em></p>
-    </div>
-  </section>
-
-  <section class="block" id="o-que-eu-faco">
-    <div class="wrap">
-      <div class="head">
-        <div class="eyebrow" data-i="o_eye">O que eu faço</div>
-        <h2 data-i="o_t" data-html>Três soluções. <em>Um só responsável.</em></h2>
-        <p class="sub" data-i="o_p">Escolha uma, ou junte as três. Tudo com o seu nome, a sua marca e o seu jeito de trabalhar.</p>
-      </div>
-      <div class="offers">
-        <article class="offer">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4M7 12l3-3 2.5 2.5L17 8"/></svg></div>
-          <h3 data-i="o1t">Programa para o seu negócio</h3>
-          <p class="hook" data-i="o1h">Troque o caderno por um sistema.</p>
-          <p data-i="o1p">Um sistema para organizar o dia a dia da sua empresa.</p>
-          <ul>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"/></svg><span data-i="o1a">Vendas e caixa</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"/></svg><span data-i="o1b">Estoque de produtos</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"/></svg><span data-i="o1c">Quem pagou e quem deve</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"/></svg><span data-i="o1d">Lucro do dia e do mês</span></li>
-          </ul>
-          <div class="for" data-i="o1f" data-html><b>Ideal para:</b> lojas, oficinas, restaurantes, salões, depósitos, financeiras.</div>
-        </article>
-        <article class="offer">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg></div>
-          <h3 data-i="o2t">Site para a sua empresa</h3>
-          <p class="hook" data-i="o2h">Seja encontrado. Passe confiança.</p>
-          <p data-i="o2p">Sua empresa na internet, com o seu nome e a sua cara.</p>
-          <ul>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"/></svg><span data-i="o2a">Endereço próprio (seunome.com)</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"/></svg><span data-i="o2b">Fotos, preços e contato</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"/></svg><span data-i="o2c">Botão direto para o WhatsApp</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"/></svg><span data-i="o2d">Em português, inglês e holandês</span></li>
-          </ul>
-          <div class="for" data-i="o2f" data-html><b>Ideal para:</b> quem quer mais clientes e passar mais confiança.</div>
-        </article>
-        <article class="offer">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></div>
-          <h3 data-i="o3t">Aplicativo no celular</h3>
-          <p class="hook" data-i="o3h">Sua loja no seu bolso.</p>
-          <p data-i="o3p">Um ícone na tela do celular, igual aos outros apps.</p>
-          <ul>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"/></svg><span data-i="o3a">Veja tudo de onde estiver</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"/></svg><span data-i="o3b">Fotos e assinatura do cliente</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"/></svg><span data-i="o3c">Funciona em celular e tablet</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"/></svg><span data-i="o3d">Não precisa baixar na loja de apps</span></li>
-          </ul>
-          <div class="for" data-i="o3f" data-html><b>Ideal para:</b> donos que não ficam o dia todo na loja.</div>
-        </article>
-      </div>
-      <div class="strip">
-        <p><span data-i="m_q">Não sabe qual escolher?</span><b data-i="m_t">Me conta o seu problema. Eu digo o que resolve.</b></p>
-        <a class="btn btn-wa" href="https://wa.me/5978641010" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3z"/></svg><span data-i="m_cta">Falar no WhatsApp</span></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="block">
-    <div class="wrap">
-      <div class="head">
-        <div class="eyebrow" data-i="p_eye">Projetos reais</div>
-        <h2 data-i="p_t" data-html>Sistemas que já <em>trabalham todos os dias</em> no Suriname.</h2>
-        <p class="sub" data-i="p_p">Alguns exemplos do que já entreguei. Os nomes dos clientes ficam em sigilo.</p>
-      </div>
-      <div class="cases">
-        <article class="case"><span class="tag" data-i="k1g">Compra de ouro</span><h3 data-i="k1t">Preço certo na hora, sem calculadora</h3><dl><div><dt data-i="lbl_p">Problema</dt><dd data-i="k1p">Calcular o valor do ouro pelo teor e pela cotação do dia levava tempo e dava erro.</dd></div><div><dt data-i="lbl_s">Solução</dt><dd class="res" data-i="k1s">Sistema com cotação ao vivo que calcula o valor na hora e guarda cada compra.</dd></div></dl></article>
-        <article class="case"><span class="tag" data-i="k2g">Casa de câmbio</span><h3 data-i="k2t">O lucro de cada operação, na tela</h3><dl><div><dt data-i="lbl_p">Problema</dt><dd data-i="k2p">O dono não sabia quanto ganhava em cada troca entre dólar, USDT e outras moedas.</dd></div><div><dt data-i="lbl_s">Solução</dt><dd class="res" data-i="k2s">Programa que mostra o saldo de cada moeda e o lucro de cada venda, com relatório do dia, da semana e do mês.</dd></div></dl></article>
-        <article class="case"><span class="tag" data-i="k3g">Estética automotiva</span><h3 data-i="k3t">Fotos na chegada, sem discussão</h3><dl><div><dt data-i="lbl_p">Problema</dt><dd data-i="k3p">Clientes reclamavam de riscos que o carro já tinha antes de chegar.</dd></div><div><dt data-i="lbl_s">Solução</dt><dd class="res" data-i="k3s">Fotos do carro no tablet na entrada, e o dono acompanha em que etapa cada carro está.</dd></div></dl></article>
-        <article class="case"><span class="tag" data-i="k4g">Depósitos de clientes</span><h3 data-i="k4t">O saldo de cada cliente, sempre certo</h3><dl><div><dt data-i="lbl_p">Problema</dt><dd data-i="k4p">Muitos clientes deixam dinheiro guardado na loja e pedem saque por telefone.</dd></div><div><dt data-i="lbl_s">Solução</dt><dd class="res" data-i="k4s">Conta de cada cliente com resumo do dia na tela inicial e recibo para assinar em cada movimento.</dd></div></dl></article>
-      </div>
-      <div class="pillars wide">
-        <div class="pillar"><b data-i="pl1t">Atendimento direto</b><span data-i="pl1p">Você fala com quem faz o sistema, não com uma central.</span></div>
-        <div class="pillar"><b data-i="pl2t">Tecnologia de ponta</b><span data-i="pl2p">Hospedado na nuvem da Cloudflare, rápido e seguro.</span></div>
-        <div class="pillar"><b data-i="pl3t">Cópia de segurança</b><span data-i="pl3p">Seus dados guardados, mesmo se o celular quebrar.</span></div>
-        <div class="pillar"><b data-i="pl4t">Feito sob medida</b><span data-i="pl4p">O sistema se adapta a você, não o contrário.</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="block">
-    <div class="wrap">
-      <div class="head">
-        <div class="eyebrow" data-i="g_eye">Sem risco</div>
-        <h2 data-i="g_h" data-html>Três promessas <em>para você ficar tranquilo.</em></h2>
-      </div>
-      <div class="guar3">
-        <div class="g"><div class="num">0</div><h3 data-i="g1t">Orçamento grátis</h3><p data-i="g1p">Você conta o que precisa e recebe o orçamento sem pagar nada e sem compromisso.</p></div>
-        <div class="g"><div class="num">1ª</div><h3 data-i="g2t">Você vê antes de tudo ficar pronto</h3><p data-i="g2p">Você testa a primeira versão em poucos dias e acompanha cada melhoria, versão por versão.</p></div>
-        <div class="g"><div class="num">2</div><h3 data-i="g3t">2 meses de ajustes incluídos</h3><p data-i="g3p">Depois da entrega, mudanças e correções sem custo extra durante dois meses.</p></div>
-      </div>
-      <div class="strip">
-        <p><span data-i="g_q">Pronto para organizar o seu negócio?</span><b data-i="g_t2">O primeiro passo é uma conversa, e ela é grátis.</b></p>
-        <a class="btn btn-wa" href="https://wa.me/5978641010" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3z"/></svg><span data-i="g_cta">Começar agora</span></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="block">
-    <div class="wrap">
-      <div class="head">
-        <div class="eyebrow" data-i="s_eye">Como funciona</div>
-        <h2 data-i="s_t" data-html>Simples assim. <em>Três passos.</em></h2>
-      </div>
-      <ol class="steps">
-        <li><h3 data-i="s1t">Você me conta</h3><p data-i="s1p">Me chama no WhatsApp e explica como você trabalha hoje. Pode ser por mensagem, áudio ou eu vou até você.</p></li>
-        <li><h3 data-i="s2t">Eu faço</h3><p data-i="s2p">Eu monto o programa ou o site com o seu nome e logo. Em poucos dias você já pode testar.</p></li>
-        <li><h3 data-i="s3t">Você usa</h3><p data-i="s3p">Eu te ensino a usar e ajusto o que precisar. Se tiver dúvida, é só me chamar.</p></li>
+      <ol class="day">
+        <li><time>08:00</time><h3 data-i="d1t">Abre a loja</h3><p data-i="d1p">Olha no celular quanto vendeu ontem e quanto tem no caixa. Sem abrir caderno.</p></li>
+        <li><time>11:30</time><h3 data-i="d2t">Cliente paga</h3><p data-i="d2p">O pagamento entra no sistema e sai o recibo. A dívida do cliente baixa sozinha.</p></li>
+        <li><time>15:00</time><h3 data-i="d3t">Funcionário vende</h3><p data-i="d3p">O estoque atualiza na hora. Você vê tudo, mesmo longe da loja.</p></li>
+        <li><time>19:00</time><h3 data-i="d4t">Fecha o dia</h3><p data-i="d4p">O lucro do dia aparece na tela. Sem fazer conta de cabeça.</p></li>
       </ol>
     </div>
   </section>
 
-  <section class="block">
+  <section class="sec">
     <div class="wrap">
       <div class="head">
-        <div class="eyebrow" data-i="q_eye">Dúvidas</div>
-        <h2 data-i="q_t">Perguntas comuns</h2>
+        <div class="kicker" data-i="o_k">o que eu faço</div>
+        <h2 data-i="o_t">Três coisas. <span class="y">Bem feitas.</span></h2>
       </div>
-      <div class="faq">
-        <details open><summary data-i="q1">Preciso entender de computador?</summary><p data-i="q1a">Não. Os programas são feitos para serem simples, com botões grandes e palavras fáceis. Eu te ensino a usar.</p></details>
-        <details><summary data-i="q2">Preciso instalar alguma coisa?</summary><p data-i="q2a">Não. Funciona no navegador do celular, do tablet ou do computador. É só abrir e entrar com seu usuário e senha.</p></details>
-        <details><summary data-i="q3">E se eu perder o celular?</summary><p data-i="q3a">Seus dados não ficam no celular. Ficam guardados na internet, com cópia de segurança. Você entra de outro aparelho e está tudo lá.</p></details>
-        <details><summary data-i="q4">Funciona com SRD, dólar e euro?</summary><p data-i="q4a">Sim. O programa pode trabalhar com várias moedas ao mesmo tempo.</p></details>
-        <details><summary data-i="q5">Meus funcionários podem usar?</summary><p data-i="q5a">Sim. Cada funcionário tem o seu usuário e senha, e você escolhe o que cada um pode ver e fazer.</p></details>
-        <details><summary data-i="q7">Em quanto tempo fica pronto?</summary><p data-i="q7a">A primeira versão fica pronta em poucos dias, e você já pode usar. Depois vamos melhorando juntos, versão por versão.</p></details>
-        <details><summary data-i="q6">Quanto custa?</summary><p data-i="q6a">Depende do que você precisa. Você paga uma vez para eu fazer, e depois uma mensalidade pequena para manter tudo funcionando e guardado. O orçamento é grátis e sem compromisso.</p></details>
+      <div class="svc">
+        <article><span class="ix">01</span><h3 data-i="o1t">Programas</h3><p data-i="o1p">Para organizar o dia a dia da empresa.</p><ul><li data-i="o1a">Vendas e caixa</li><li data-i="o1b">Estoque</li><li data-i="o1c">Quem pagou e quem deve</li><li data-i="o1d">Lucro do dia e do mês</li></ul></article>
+        <article><span class="ix">02</span><h3 data-i="o2t">Sites</h3><p data-i="o2p">Para sua empresa ser encontrada e passar confiança.</p><ul><li data-i="o2a">Endereço próprio (seunome.com)</li><li data-i="o2b">Fotos, preços e contato</li><li data-i="o2c">Botão direto para o WhatsApp</li><li data-i="o2d">Em PT, EN e NL</li></ul></article>
+        <article><span class="ix">03</span><h3 data-i="o3t">Aplicativos</h3><p data-i="o3p">Para acompanhar tudo de onde estiver.</p><ul><li data-i="o3a">Ícone na tela do celular</li><li data-i="o3b">Fotos e assinatura do cliente</li><li data-i="o3c">Celular e tablet</li><li data-i="o3d">Sem baixar na loja de apps</li></ul></article>
       </div>
     </div>
   </section>
 
-  <section class="block" id="contato">
-    <div class="wrap final">
-      <div class="eyebrow" data-i="k_eye">Próximo passo</div>
-      <h2 data-i="k_t" data-html>Cada dia no caderno é dinheiro que <em>você não está vendo.</em></h2>
-      <p class="sub" data-i="k_p">Me manda uma mensagem contando o que você precisa. Eu respondo, explico tudo e te passo um orçamento grátis.</p>
-      <div class="cta">
-        <a class="btn btn-wa" href="https://wa.me/5978641010" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3z"/></svg><span data-i="k_wa">Quero meu orçamento grátis</span></a>
+  <section class="sec">
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker" data-i="c_k">já funcionando</div>
+        <h2 data-i="c_t">Projetos reais <span class="y">no Suriname.</span></h2>
+        <p class="lead" data-i="c_p">Os nomes dos clientes ficam em sigilo. O resultado, não.</p>
       </div>
-      <div class="founder"><div class="avatar" aria-hidden="true">R</div><div><small data-i="f_role">Quem vai te atender</small><b>Rony · AurumSys</b><p data-i="f_p">Sou eu que converso com você, faço o sistema e te ensino a usar. Do primeiro contato até o suporte, você fala sempre com a mesma pessoa.</p></div></div>
-      <div class="contacts">
-        <div class="row"><div><span>WhatsApp</span><b>+597 864-1010</b></div><button class="copy" id="cp1" data-copy="+597 864-1010" data-i="copy">Copiar</button></div>
-        <div class="row"><div><span>E-mail</span><b>ronnycacador@gmail.com</b></div><button class="copy" id="cp2" data-copy="ronnycacador@gmail.com" data-i="copy">Copiar</button></div>
+      <div class="ledger">
+        <div class="lrow"><div class="sector"><small>#01</small><span data-i="k1g">Compra de ouro</span></div><dl><dt data-i="lp1">antes</dt><dd data-i="k1p">Calcular o valor pelo teor e pela cotação do dia levava tempo e dava erro.</dd></dl><dl class="res"><dt data-i="ls1">depois</dt><dd data-i="k1s">Cotação ao vivo e valor calculado na hora. Cada compra fica guardada.</dd></dl></div>
+        <div class="lrow"><div class="sector"><small>#02</small><span data-i="k2g">Casa de câmbio</span></div><dl><dt data-i="lp2">antes</dt><dd data-i="k2p">O dono não sabia quanto ganhava em cada troca de moeda.</dd></dl><dl class="res"><dt data-i="ls2">depois</dt><dd data-i="k2s">Saldo de cada moeda e lucro de cada venda, com relatório do dia, da semana e do mês.</dd></dl></div>
+        <div class="lrow"><div class="sector"><small>#03</small><span data-i="k3g">Estética automotiva</span></div><dl><dt data-i="lp3">antes</dt><dd data-i="k3p">Clientes reclamavam de riscos que o carro já tinha antes de chegar.</dd></dl><dl class="res"><dt data-i="ls3">depois</dt><dd data-i="k3s">Fotos do carro no tablet na entrada, e o dono vê em que etapa cada carro está.</dd></dl></div>
+        <div class="lrow"><div class="sector"><small>#04</small><span data-i="k4g">Depósitos de clientes</span></div><dl><dt data-i="lp4">antes</dt><dd data-i="k4p">Muitos clientes guardam dinheiro na loja e pedem saque por telefone.</dd></dl><dl class="res"><dt data-i="ls4">depois</dt><dd data-i="k4s">Conta de cada cliente, resumo do dia na tela e recibo para assinar.</dd></dl></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker" data-i="g_k">sem risco</div>
+        <h2 data-i="g_t">Você só tem <span class="y">a ganhar.</span></h2>
+      </div>
+      <div class="prom">
+        <div class="plist">
+          <div class="p"><div class="n">0</div><div><h3 data-i="g1t">Orçamento grátis</h3><p data-i="g1p">Você conta o que precisa e recebe o orçamento sem pagar nada.</p></div></div>
+          <div class="p"><div class="n">V1</div><div><h3 data-i="g2t">Você testa antes</h3><p data-i="g2p">A primeira versão fica pronta em poucos dias. Você usa e me diz o que mudar.</p></div></div>
+          <div class="p"><div class="n">2M</div><div><h3 data-i="g3t">2 meses de ajustes</h3><p data-i="g3p">Depois da entrega, mudanças e correções sem custo extra por dois meses.</p></div></div>
+        </div>
+        <div class="founder">
+          <svg class="trace" viewBox="0 0 300 220" aria-hidden="true"><path d="M10 200 H120 L170 150 H280 M170 150 V40 L210 10"/><rect x="272" y="142" width="16" height="16" rx="3"/><rect x="202" y="2" width="16" height="16" rx="3"/></svg>
+          <small data-i="f_k">quem vai te atender</small>
+          <h3>Rony</h3>
+          <p data-i="f_p">Sou eu que converso com você, faço o sistema e te ensino a usar. Do primeiro contato até o suporte, você fala sempre com a mesma pessoa.</p>
+          <a class="btn" href="https://wa.me/5978641010" target="_blank" rel="noopener"><span data-i="f_cta">Falar com o Rony</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker" data-i="q_k">perguntas</div>
+        <h2 data-i="q_t">Sem <span class="y">complicação.</span></h2>
+      </div>
+      <div class="faq">
+        <details><summary data-i="q1">Preciso entender de computador?</summary><p data-i="q1a">Não. Botões grandes e palavras fáceis. Eu te ensino a usar.</p></details>
+        <details><summary data-i="q2">Preciso instalar alguma coisa?</summary><p data-i="q2a">Não. Funciona no navegador do celular, tablet ou computador.</p></details>
+        <details><summary data-i="q3">E se eu perder o celular?</summary><p data-i="q3a">Seus dados ficam guardados na internet, com cópia de segurança. Entre de outro aparelho e está tudo lá.</p></details>
+        <details><summary data-i="q4">Funciona com SRD, dólar e euro?</summary><p data-i="q4a">Sim. Várias moedas ao mesmo tempo.</p></details>
+        <details><summary data-i="q5">Meus funcionários podem usar?</summary><p data-i="q5a">Sim. Cada um com usuário e senha, e você escolhe o que cada um pode ver.</p></details>
+        <details><summary data-i="q6">Quanto custa?</summary><p data-i="q6a">Você paga uma vez para eu fazer e depois uma mensalidade pequena para manter tudo funcionando. O orçamento é grátis.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="contato">
+    <div class="wrap">
+      <div class="final">
+        <svg class="trace" viewBox="0 0 560 360" aria-hidden="true"><path d="M20 340 H200 L260 280 H420 L480 220 V40 M260 280 V120 L320 60 H540"/><rect x="472" y="32" width="16" height="16" rx="3"/><rect x="532" y="52" width="16" height="16" rx="3"/><rect x="12" y="332" width="16" height="16" rx="3"/></svg>
+        <h2 data-i="k_t">Vamos tirar seu negócio do caderno?</h2>
+        <p data-i="k_p">Me manda uma mensagem contando o que você faz. Eu respondo e explico tudo, sem compromisso.</p>
+        <div class="cta">
+          <a class="btn btn-wa" href="https://wa.me/5978641010" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3z"/></svg><span data-i="k_wa">Chamar no WhatsApp</span></a>
+          <a class="btn btn-ghost" href="#top" data-i="k_back">Ver o exemplo de novo</a>
+        </div>
+        <div class="contacts">
+          <div><span>WhatsApp</span><b>+597 864-1010</b><button class="copy" id="cp1" data-copy="+597 864-1010" data-i="copy">Copiar</button></div>
+          <div><span>E-mail</span><b>ronnycacador@gmail.com</b><button class="copy" id="cp2" data-copy="ronnycacador@gmail.com" data-i="copy">Copiar</button></div>
+        </div>
       </div>
     </div>
   </section>
 </main>
 
-<a class="float" href="https://wa.me/5978641010" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3z"/></svg></a>
+<a class="float" href="https://wa.me/5978641010" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3z"/></svg></a>
 
 <footer>
   <div class="wrap foot">
     <span>© 2026 AurumSys · All rights reserved.</span>
-    <span>aurumsys.net · v9</span>
+    <span>aurumsys.net · v10</span>
   </div>
 </footer>
 
 <script>
-const T={
-en:{nav_wa:"Free quote",h_eye:"Programs · Websites · Apps",h1:"Your business organized, <em>in the palm of your hand.</em>",h1p:"I build programs, websites and apps that are easy to use, made around the way you already work. You don't need to understand computers: I do everything and teach you.",cta1:"Get my free quote",cta2:"See what I do",t1:"Protected data",t2:"Works on your phone",t3:"EN · PT · NL",
-b0:"Today",b1:"Everything written in a notebook",b2:"Math done in your head",b3:"Not sure who owes you",b4:"Not sure how much you made this month",a0:"With AurumSys",a1:"Everything saved and secure",a2:"The program does the math",a3:"List of who owes, instantly",a4:"Today's and this month's profit on screen",
-c_eye:"Sound familiar?",c_t:"This is for you <em>if...</em>",c1:"You write sales and orders on paper",c2:"You waste time looking for information",c3:"You don't really know what comes in and goes out",c4:"You have customers who owe you money",c5:"You want people to find your business online",c6:"You want to check on your shop from anywhere",c_n:"If you checked even one, <em>I can help.</em>",
-o_eye:"What I do",o_t:"Three solutions. <em>One person responsible.</em>",o_p:"Pick one, or combine all three. All under your name, your brand and your way of working.",
-o1t:"A program for your business",o1p:"A system to organize your company's day to day.",o1a:"Sales and cash register",o1b:"Product stock",o1c:"Who paid and who owes",o1d:"Profit for the day and month",o1f:"<b>Ideal for:</b> shops, workshops, restaurants, salons, warehouses, lenders.",
-o2t:"A website for your business",o2p:"Your business online, with your name and your look.",o2a:"Your own address (yourname.com)",o2b:"Photos, prices and contact",o2c:"Button straight to WhatsApp",o2d:"In English, Portuguese and Dutch",o2f:"<b>Ideal for:</b> anyone who wants more customers and more trust.",
-o3t:"An app on your phone",o3p:"An icon on your phone screen, just like other apps.",o3a:"See everything from anywhere",o3b:"Photos and customer signature",o3c:"Works on phone and tablet",o3d:"No app store download needed",o3f:"<b>Ideal for:</b> owners who aren't at the shop all day.",
-p_t:"Systems that already <em>work every day</em> in Suriname.",
-pl1t:"Direct service",pl1p:"You talk to the person who builds the system, not a call center.",pl2t:"Modern technology",pl2p:"Hosted on Cloudflare's cloud, fast and secure.",pl3t:"Backups",pl3p:"Your data stays safe, even if your phone breaks.",pl4t:"Made to measure",pl4p:"The system adapts to you, not the other way around.",
-
-s_eye:"How it works",s_t:"That simple. <em>Three steps.</em>",s1t:"You tell me",s1p:"Message me on WhatsApp and explain how you work today. Text, voice message, or I come to you.",s2t:"I build it",s2p:"I set up the program or website with your name and logo. Within a few days you can try it.",s3t:"You use it",s3p:"I teach you how to use it and adjust whatever you need. Any question, just message me.",
-q_eye:"Questions",q_t:"Common questions",q1:"Do I need to understand computers?",q1a:"No. The programs are made to be simple, with big buttons and plain words. I teach you how to use them.",q2:"Do I need to install anything?",q2a:"No. It works in the browser on your phone, tablet or computer. Just open it and log in with your username and password.",q3:"What if I lose my phone?",q3a:"Your data isn't stored on the phone. It's saved online with a backup. Log in from another device and everything is there.",q4:"Does it work with SRD, dollars and euros?",q4a:"Yes. The program can work with several currencies at the same time.",q5:"Can my employees use it?",q5a:"Yes. Each employee gets their own username and password, and you choose what each one can see and do.",q6:"How much does it cost?",q6a:"It depends on what you need. You pay once for me to build it, then a small monthly fee to keep everything running and backed up. Quotes are free and with no obligation.",
-k_eye:"Next step",k_t:"Every day on paper is money <em>you're not seeing.</em>",k_p:"Send me a message about what you need. I'll reply, explain everything and give you a free quote.",k_wa:"Get my free quote",copy:"Copy",copied:"Copied",micro:"No obligation. You talk directly to the person who builds your system. Serving all of Suriname and remote clients.",o1h:"Swap the notebook for a system.",o2h:"Get found. Build trust.",o3h:"Your shop in your pocket.",m_q:"Not sure which one you need?",m_t:"Tell me your problem. I'll tell you what solves it.",m_cta:"Message on WhatsApp",p_eye:"Real projects",p_p:"A few examples of what I've delivered. Client names are kept confidential.",lbl_p:"Problem",lbl_s:"Solution",k1g:"Gold buying",k1t:"The right price instantly, no calculator",k1p:"Working out gold value by purity and the day's price took time and caused mistakes.",k1s:"A system with a live price that calculates the value instantly and records every purchase.",k2g:"Currency exchange",k2t:"The profit of every trade, on screen",k2p:"The owner didn't know how much he made on each exchange between dollars, USDT and other currencies.",k2s:"A program that shows the balance of each currency and the profit on every sale, with daily, weekly and monthly reports.",k3g:"Car detailing",k3t:"Photos on arrival, no arguments",k3p:"Customers complained about scratches the car already had before it arrived.",k3s:"Photos of the car on a tablet at drop-off, and the owner sees which stage every car is in.",k4g:"Customer deposits",k4t:"Every customer's balance, always right",k4p:"Many customers keep money at the store and ask for withdrawals by phone.",k4s:"An account for each customer, a daily summary on the home screen and a receipt to sign for every movement.",g_eye:"No risk",g_h:"Three promises <em>so you can relax.</em>",g1t:"Free quote",g1p:"Tell me what you need and get a quote at no cost and with no obligation.",g2t:"You see it before it's finished",g2p:"You try the first version within days and follow every improvement, version by version.",g3t:"2 months of adjustments included",g3p:"After delivery, changes and fixes at no extra cost for two months.",g_q:"Ready to organize your business?",g_t2:"The first step is a conversation, and it's free.",g_cta:"Start now",q7:"How long does it take?",q7a:"The first version is ready within a few days and you can start using it. Then we improve it together, version by version.",f_role:"Who you'll talk to",f_p:"I'm the one who talks to you, builds your system and teaches you to use it. From the first message to support, you always deal with the same person."},
-nl:{nav_wa:"Gratis offerte",h_eye:"Programma's · Websites · Apps",h1:"Uw bedrijf georganiseerd, <em>in de palm van uw hand.</em>",h1p:"Ik maak programma's, websites en apps die makkelijk te gebruiken zijn, gebouwd rond hoe u nu al werkt. U hoeft niets van computers te weten: ik doe alles en leer het u.",cta1:"Vraag gratis offerte aan",cta2:"Bekijk wat ik doe",t1:"Beveiligde gegevens",t2:"Werkt op uw telefoon",t3:"NL · EN · PT",
-b0:"Nu",b1:"Alles in een schrift",b2:"Rekenen uit het hoofd",b3:"Niet weten wie nog moet betalen",b4:"Niet weten hoeveel winst deze maand",a0:"Met AurumSys",a1:"Alles veilig opgeslagen",a2:"Het programma rekent voor u",a3:"Direct zien wie nog moet betalen",a4:"Winst van vandaag en deze maand",
-c_eye:"Herkenbaar?",c_t:"Dit is voor u <em>als...</em>",c1:"U verkopen en bestellingen op papier schrijft",c2:"U tijd verliest met informatie zoeken",c3:"U niet goed weet wat er binnenkomt en uitgaat",c4:"U klanten heeft die nog moeten betalen",c5:"U wilt dat mensen uw bedrijf online vinden",c6:"U uw winkel van overal wilt bekijken",c_n:"Herkent u er één? <em>Dan kan ik u helpen.</em>",
-o_eye:"Wat ik doe",o_t:"Drie oplossingen. <em>Eén aanspreekpunt.</em>",o_p:"Kies er één, of combineer ze. Alles onder uw naam, uw merk en uw manier van werken.",
-o1t:"Een programma voor uw bedrijf",o1p:"Een systeem om uw dagelijkse zaken te regelen.",o1a:"Verkoop en kassa",o1b:"Voorraad",o1c:"Wie betaald heeft en wie nog moet",o1d:"Winst per dag en per maand",o1f:"<b>Ideaal voor:</b> winkels, werkplaatsen, restaurants, salons, magazijnen, geldverstrekkers.",
-o2t:"Een website voor uw bedrijf",o2p:"Uw bedrijf online, met uw naam en uw uitstraling.",o2a:"Eigen adres (uwnaam.com)",o2b:"Foto's, prijzen en contact",o2c:"Knop direct naar WhatsApp",o2d:"In het Nederlands, Engels en Portugees",o2f:"<b>Ideaal voor:</b> wie meer klanten en meer vertrouwen wil.",
-o3t:"Een app op uw telefoon",o3p:"Een icoon op uw telefoon, net als andere apps.",o3a:"Alles zien waar u ook bent",o3b:"Foto's en handtekening van de klant",o3c:"Werkt op telefoon en tablet",o3d:"Geen download uit de app-winkel nodig",o3f:"<b>Ideaal voor:</b> eigenaren die niet de hele dag in de zaak zijn.",
-p_t:"Systemen die <em>elke dag werken</em> in Suriname.",
-pl1t:"Direct contact",pl1p:"U spreekt met degene die het systeem bouwt, niet met een callcenter.",pl2t:"Moderne technologie",pl2p:"Gehost in de Cloudflare-cloud, snel en veilig.",pl3t:"Back-ups",pl3p:"Uw gegevens blijven veilig, ook als uw telefoon kapotgaat.",pl4t:"Op maat gemaakt",pl4p:"Het systeem past zich aan u aan, niet andersom.",
-
-s_eye:"Hoe het werkt",s_t:"Zo eenvoudig. <em>Drie stappen.</em>",s1t:"U vertelt het mij",s1p:"Stuur mij een WhatsApp en leg uit hoe u nu werkt. Tekst, spraakbericht, of ik kom langs.",s2t:"Ik maak het",s2p:"Ik maak het programma of de website met uw naam en logo. Binnen een paar dagen kunt u het proberen.",s3t:"U gebruikt het",s3p:"Ik leer u hoe het werkt en pas aan wat nodig is. Vragen? Stuur gewoon een bericht.",
-q_eye:"Vragen",q_t:"Veelgestelde vragen",q1:"Moet ik verstand hebben van computers?",q1a:"Nee. De programma's zijn eenvoudig, met grote knoppen en duidelijke woorden. Ik leer u hoe het werkt.",q2:"Moet ik iets installeren?",q2a:"Nee. Het werkt in de browser van uw telefoon, tablet of computer. Openen en inloggen, klaar.",q3:"Wat als ik mijn telefoon kwijtraak?",q3a:"Uw gegevens staan niet op de telefoon. Ze zijn online opgeslagen met een back-up. Log in op een ander toestel en alles is er nog.",q4:"Werkt het met SRD, dollar en euro?",q4a:"Ja. Het programma kan met meerdere valuta tegelijk werken.",q5:"Kunnen mijn medewerkers het gebruiken?",q5a:"Ja. Elke medewerker krijgt een eigen gebruikersnaam en wachtwoord, en u kiest wat iedereen mag zien en doen.",q6:"Wat kost het?",q6a:"Dat hangt af van wat u nodig heeft. U betaalt één keer voor het maken, daarna een klein maandbedrag om alles werkend en veilig te houden. De offerte is gratis en vrijblijvend.",
-k_eye:"Volgende stap",k_t:"Elke dag op papier is geld <em>dat u niet ziet.</em>",k_p:"Stuur mij een bericht over wat u nodig heeft. Ik antwoord, leg alles uit en geef u een gratis offerte.",k_wa:"Vraag gratis offerte aan",copy:"Kopiëren",copied:"Gekopieerd",micro:"Vrijblijvend. U spreekt direct met degene die uw systeem bouwt. Voor heel Suriname en ook op afstand.",o1h:"Ruil het schrift in voor een systeem.",o2h:"Word gevonden. Wek vertrouwen.",o3h:"Uw zaak in uw broekzak.",m_q:"Weet u niet wat u nodig heeft?",m_t:"Vertel mij uw probleem. Ik zeg wat het oplost.",m_cta:"WhatsApp sturen",p_eye:"Echte projecten",p_p:"Enkele voorbeelden van wat ik heb opgeleverd. Namen van klanten blijven vertrouwelijk.",lbl_p:"Probleem",lbl_s:"Oplossing",k1g:"Goudinkoop",k1t:"Direct de juiste prijs, zonder rekenmachine",k1p:"De waarde van goud berekenen op gehalte en dagkoers kostte tijd en gaf fouten.",k1s:"Een systeem met live koers dat de waarde direct berekent en elke aankoop bewaart.",k2g:"Wisselkantoor",k2t:"De winst van elke transactie, op het scherm",k2p:"De eigenaar wist niet hoeveel hij verdiende op elke wissel tussen dollar, USDT en andere valuta.",k2s:"Een programma dat het saldo per valuta en de winst per verkoop toont, met dag-, week- en maandrapporten.",k3g:"Autodetailing",k3t:"Foto's bij aankomst, geen discussie",k3p:"Klanten klaagden over krassen die de auto al had voordat hij binnenkwam.",k3s:"Foto's van de auto op de tablet bij aankomst, en de eigenaar ziet in welke fase elke auto is.",k4g:"Klantendepots",k4t:"Het saldo van elke klant, altijd juist",k4p:"Veel klanten bewaren geld in de winkel en vragen telefonisch om opnames.",k4s:"Een rekening per klant, een dagoverzicht op het startscherm en een kwitantie om te tekenen bij elke boeking.",g_eye:"Zonder risico",g_h:"Drie beloftes <em>zodat u gerust bent.</em>",g1t:"Gratis offerte",g1p:"Vertel wat u nodig heeft en ontvang een offerte, gratis en vrijblijvend.",g2t:"U ziet het voordat het af is",g2p:"U probeert de eerste versie binnen enkele dagen en volgt elke verbetering, versie na versie.",g3t:"2 maanden aanpassingen inbegrepen",g3p:"Na oplevering twee maanden wijzigingen en correcties zonder extra kosten.",g_q:"Klaar om uw bedrijf te organiseren?",g_t2:"De eerste stap is een gesprek, en dat is gratis.",g_cta:"Nu beginnen",q7:"Hoe snel is het klaar?",q7a:"De eerste versie is binnen enkele dagen klaar en u kunt hem meteen gebruiken. Daarna verbeteren we samen, versie na versie.",f_role:"Met wie u praat",f_p:"Ik ben degene die met u praat, uw systeem bouwt en u leert ermee te werken. Van het eerste bericht tot de support spreekt u altijd met dezelfde persoon."}
+/* phone demo data: [name, icon, bigLabel, bigNumber, trend, bars(7), rows[[dot,text,value]]] */
+const DEMO={
+pt:{date:"Hoje",shop:["Mercadinho Boa Vista","🛒","Vendas de hoje","SRD 18.450","▲ 12% a mais que ontem",[52,61,48,70,66,58,80],[["g","Arroz 5 kg · 12 vendidos","SRD 2.640"],["r2","3 clientes devendo","SRD 2.100"],["y","Estoque baixo: óleo","4 un."]]],
+garage:["Auto Oficina Kwatta","🔧","Carros hoje","6 carros","2 prontos para entregar",[4,5,3,6,5,7,6],[["g","Toyota Hilux · troca de óleo","Pronto"],["y","Nissan Navara · freio","Esperando peça"],["r2","A receber hoje","SRD 4.800"]]],
+food:["Restaurante Waterkant","🍽️","Pedidos hoje","84 pedidos","Caixa: SRD 9.320",[60,72,55,80,90,110,84],[["g","Mais vendido: Moksi alesi","31×"],["y","Mesa 4 · aberta","SRD 410"],["g","Entregas","12"]]],
+salon:["Salão Bella","✂️","Clientes hoje","14 clientes","Próximo às 15:30",[9,12,8,14,11,16,14],[["y","15:30 · Ana · corte","Confirmado"],["g","16:15 · Priya · unhas","Confirmado"],["g","Caixa de hoje","SRD 3.250"]]],
+fx:["Câmbio Centrum","💱","Lucro de hoje","US$ 410","38 operações",[280,350,300,420,390,460,410],[["g","Saldo em dólar","US$ 12.500"],["g","Saldo em USDT","8.200"],["g","Saldo em euro","€ 3.100"]]],
+gold:["Gold Exchange","🥇","Compras de hoje","312 g","Cotação ao vivo atualizada",[180,240,210,300,260,340,312],[["g","Compra · 92% de teor","42,5 g"],["y","Barra nº 3 · fechando","960 g"],["g","Pago hoje","US$ 24.180"]]]},
+en:{date:"Today",shop:["Boa Vista Mini Market","🛒","Sales today","SRD 18,450","▲ 12% more than yesterday",[52,61,48,70,66,58,80],[["g","Rice 5 kg · 12 sold","SRD 2,640"],["r2","3 customers owe","SRD 2,100"],["y","Low stock: cooking oil","4 units"]]],
+garage:["Kwatta Auto Shop","🔧","Cars today","6 cars","2 ready for pickup",[4,5,3,6,5,7,6],[["g","Toyota Hilux · oil change","Ready"],["y","Nissan Navara · brakes","Waiting for part"],["r2","Due today","SRD 4,800"]]],
+food:["Waterkant Restaurant","🍽️","Orders today","84 orders","Cash: SRD 9,320",[60,72,55,80,90,110,84],[["g","Top seller: Moksi alesi","31×"],["y","Table 4 · open","SRD 410"],["g","Deliveries","12"]]],
+salon:["Bella Salon","✂️","Clients today","14 clients","Next at 3:30 PM",[9,12,8,14,11,16,14],[["y","3:30 · Ana · haircut","Confirmed"],["g","4:15 · Priya · nails","Confirmed"],["g","Today's cash","SRD 3,250"]]],
+fx:["Centrum Exchange","💱","Profit today","US$ 410","38 trades",[280,350,300,420,390,460,410],[["g","Dollar balance","US$ 12,500"],["g","USDT balance","8,200"],["g","Euro balance","€ 3,100"]]],
+gold:["Gold Exchange","🥇","Bought today","312 g","Live gold price updated",[180,240,210,300,260,340,312],[["g","Purchase · 92% purity","42.5 g"],["y","Bar no. 3 · closing","960 g"],["g","Paid today","US$ 24,180"]]]},
+nl:{date:"Vandaag",shop:["Minimarkt Boa Vista","🛒","Verkoop vandaag","SRD 18.450","▲ 12% meer dan gisteren",[52,61,48,70,66,58,80],[["g","Rijst 5 kg · 12 verkocht","SRD 2.640"],["r2","3 klanten moeten betalen","SRD 2.100"],["y","Weinig voorraad: olie","4 st."]]],
+garage:["Autobedrijf Kwatta","🔧","Auto's vandaag","6 auto's","2 klaar om op te halen",[4,5,3,6,5,7,6],[["g","Toyota Hilux · olie verversen","Klaar"],["y","Nissan Navara · remmen","Wacht op onderdeel"],["r2","Vandaag te ontvangen","SRD 4.800"]]],
+food:["Restaurant Waterkant","🍽️","Bestellingen vandaag","84 bestellingen","Kassa: SRD 9.320",[60,72,55,80,90,110,84],[["g","Meest verkocht: Moksi alesi","31×"],["y","Tafel 4 · open","SRD 410"],["g","Bezorgingen","12"]]],
+salon:["Salon Bella","✂️","Klanten vandaag","14 klanten","Volgende om 15:30",[9,12,8,14,11,16,14],[["y","15:30 · Ana · knippen","Bevestigd"],["g","16:15 · Priya · nagels","Bevestigd"],["g","Kassa vandaag","SRD 3.250"]]],
+fx:["Wisselkantoor Centrum","💱","Winst vandaag","US$ 410","38 transacties",[280,350,300,420,390,460,410],[["g","Saldo dollar","US$ 12.500"],["g","Saldo USDT","8.200"],["g","Saldo euro","€ 3.100"]]],
+gold:["Gold Exchange","🥇","Inkoop vandaag","312 g","Live goudkoers bijgewerkt",[180,240,210,300,260,340,312],[["g","Inkoop · 92% gehalte","42,5 g"],["y","Baar nr. 3 · afsluiten","960 g"],["g","Vandaag betaald","US$ 24.180"]]]}
 };
-const PT={};document.querySelectorAll("[data-i]").forEach(e=>{PT[e.dataset.i]=e.hasAttribute("data-html")?e.innerHTML:e.textContent});PT.copied="Copiado";T.pt=PT;
-let lang="pt";
+const T={
+en:{nav_wa:"Free quote",h_k:"custom software · suriname",h1:"Your business <span class=\"y\">on your phone.</span>",h1p:"Easy-to-use programs, websites and apps, built around the way you already work. You don't need to understand computers.",pick:"What's your business? Tap and see how it looks:",n_shop:"Shop",n_garage:"Workshop",n_food:"Restaurant",n_salon:"Salon",n_fx:"Exchange",n_gold:"Gold",cta1:"I want one of these",micro:"Free quote, no obligation. You talk directly to me, the person who builds it.",ex:"Example screen",
+d_k:"a day with aurumsys",d_t:"From notebook <span class=\"y\">to system.</span>",d_p:"See how your day changes when everything is in one place.",d1t:"Open the shop",d1p:"Check on your phone what you sold yesterday and what's in the register. No notebook.",d2t:"A customer pays",d2p:"The payment goes into the system and a receipt comes out. Their debt updates by itself.",d3t:"An employee sells",d3p:"Stock updates instantly. You see everything, even away from the shop.",d4t:"Close the day",d4p:"Today's profit appears on screen. No mental math.",
+o_k:"what i do",o_t:"Three things. <span class=\"y\">Done right.</span>",o1t:"Programs",o1p:"To organize your company's day to day.",o1a:"Sales and register",o1b:"Stock",o1c:"Who paid and who owes",o1d:"Profit per day and month",o2t:"Websites",o2p:"So your business gets found and earns trust.",o2a:"Your own address (yourname.com)",o2b:"Photos, prices and contact",o2c:"Button straight to WhatsApp",o2d:"In EN, PT and NL",o3t:"Apps",o3p:"To follow everything from anywhere.",o3a:"Icon on your phone screen",o3b:"Photos and customer signature",o3c:"Phone and tablet",o3d:"No app store download",
+c_k:"already running",c_t:"Real projects <span class=\"y\">in Suriname.</span>",c_p:"Client names stay confidential. The results don't.",lp1:"before",lp2:"before",lp3:"before",lp4:"before",ls1:"after",ls2:"after",ls3:"after",ls4:"after",k1g:"Gold buying",k1p:"Working out value by purity and the day's price took time and caused mistakes.",k1s:"Live price and value calculated instantly. Every purchase is recorded.",k2g:"Currency exchange",k2p:"The owner didn't know how much he made on each currency trade.",k2s:"Balance of each currency and profit on every sale, with daily, weekly and monthly reports.",k3g:"Car detailing",k3p:"Customers complained about scratches the car already had.",k3s:"Photos of the car on a tablet at drop-off, and the owner sees what stage every car is in.",k4g:"Customer deposits",k4p:"Many customers keep money at the store and ask for withdrawals by phone.",k4s:"An account per customer, a daily summary on screen and a receipt to sign.",
+g_k:"no risk",g_t:"You only <span class=\"y\">stand to gain.</span>",g1t:"Free quote",g1p:"Tell me what you need and get a quote at no cost.",g2t:"You try it first",g2p:"The first version is ready within days. Use it and tell me what to change.",g3t:"2 months of adjustments",g3p:"After delivery, changes and fixes at no extra cost for two months.",f_k:"who you'll talk to",f_p:"I'm the one who talks to you, builds your system and teaches you to use it. From the first message to support, it's always the same person.",f_cta:"Talk to Rony",
+q_k:"questions",q_t:"No <span class=\"y\">hassle.</span>",q1:"Do I need to understand computers?",q1a:"No. Big buttons and plain words. I teach you how to use it.",q2:"Do I need to install anything?",q2a:"No. It works in the browser on your phone, tablet or computer.",q3:"What if I lose my phone?",q3a:"Your data is stored online with a backup. Log in from another device and it's all there.",q4:"Does it work with SRD, dollars and euros?",q4a:"Yes. Several currencies at once.",q5:"Can my employees use it?",q5a:"Yes. Each with their own login, and you choose what each one can see.",q6:"How much does it cost?",q6a:"You pay once for me to build it, then a small monthly fee to keep it running. The quote is free.",
+k_t:"Let's get your business off paper?",k_p:"Send me a message about what you do. I'll reply and explain everything, no obligation.",k_wa:"Message on WhatsApp",k_back:"See the example again",copy:"Copy",copied:"Copied"},
+nl:{nav_wa:"Gratis offerte",h_k:"maatwerksoftware · suriname",h1:"Uw bedrijf <span class=\"y\">op uw telefoon.</span>",h1p:"Eenvoudige programma's, websites en apps, gebouwd rond hoe u nu al werkt. U hoeft niets van computers te weten.",pick:"Wat voor bedrijf heeft u? Tik en zie hoe het eruitziet:",n_shop:"Winkel",n_garage:"Werkplaats",n_food:"Restaurant",n_salon:"Salon",n_fx:"Wissel",n_gold:"Goud",cta1:"Ik wil er ook één",micro:"Gratis offerte, vrijblijvend. U spreekt direct met mij, degene die het bouwt.",ex:"Voorbeeldscherm",
+d_k:"een dag met aurumsys",d_t:"Van schrift <span class=\"y\">naar systeem.</span>",d_p:"Zie hoe uw dag verandert als alles op één plek staat.",d1t:"Winkel open",d1p:"Zie op uw telefoon wat u gisteren verkocht en wat er in de kassa zit. Geen schrift.",d2t:"Klant betaalt",d2p:"De betaling gaat in het systeem en er komt een kwitantie uit. De schuld wordt vanzelf bijgewerkt.",d3t:"Medewerker verkoopt",d3p:"De voorraad wordt direct bijgewerkt. U ziet alles, ook als u er niet bent.",d4t:"Dag afsluiten",d4p:"De winst van vandaag staat op het scherm. Niet meer uit het hoofd rekenen.",
+o_k:"wat ik doe",o_t:"Drie dingen. <span class=\"y\">Goed gedaan.</span>",o1t:"Programma's",o1p:"Om uw dagelijkse zaken te regelen.",o1a:"Verkoop en kassa",o1b:"Voorraad",o1c:"Wie betaald heeft en wie nog moet",o1d:"Winst per dag en maand",o2t:"Websites",o2p:"Zodat uw bedrijf gevonden wordt en vertrouwen wekt.",o2a:"Eigen adres (uwnaam.com)",o2b:"Foto's, prijzen en contact",o2c:"Knop direct naar WhatsApp",o2d:"In NL, EN en PT",o3t:"Apps",o3p:"Om alles te volgen waar u ook bent.",o3a:"Icoon op uw telefoon",o3b:"Foto's en handtekening van de klant",o3c:"Telefoon en tablet",o3d:"Geen download uit de app-winkel",
+c_k:"al in gebruik",c_t:"Echte projecten <span class=\"y\">in Suriname.</span>",c_p:"Namen van klanten blijven vertrouwelijk. De resultaten niet.",lp1:"voor",lp2:"voor",lp3:"voor",lp4:"voor",ls1:"na",ls2:"na",ls3:"na",ls4:"na",k1g:"Goudinkoop",k1p:"De waarde berekenen op gehalte en dagkoers kostte tijd en gaf fouten.",k1s:"Live koers en waarde direct berekend. Elke aankoop wordt bewaard.",k2g:"Wisselkantoor",k2p:"De eigenaar wist niet hoeveel hij verdiende op elke wissel.",k2s:"Saldo per valuta en winst per verkoop, met dag-, week- en maandrapporten.",k3g:"Autodetailing",k3p:"Klanten klaagden over krassen die de auto al had.",k3s:"Foto's van de auto op de tablet bij aankomst, en de eigenaar ziet in welke fase elke auto is.",k4g:"Klantendepots",k4p:"Veel klanten bewaren geld in de winkel en vragen telefonisch om opnames.",k4s:"Een rekening per klant, dagoverzicht op het scherm en een kwitantie om te tekenen.",
+g_k:"zonder risico",g_t:"U kunt <span class=\"y\">alleen winnen.</span>",g1t:"Gratis offerte",g1p:"Vertel wat u nodig heeft en ontvang gratis een offerte.",g2t:"Eerst proberen",g2p:"De eerste versie is binnen enkele dagen klaar. Gebruik het en zeg wat anders moet.",g3t:"2 maanden aanpassingen",g3p:"Na oplevering twee maanden wijzigingen en correcties zonder extra kosten.",f_k:"met wie u praat",f_p:"Ik praat met u, bouw uw systeem en leer u ermee werken. Van het eerste bericht tot de support: altijd dezelfde persoon.",f_cta:"Praat met Rony",
+q_k:"vragen",q_t:"Zonder <span class=\"y\">gedoe.</span>",q1:"Moet ik verstand hebben van computers?",q1a:"Nee. Grote knoppen en duidelijke woorden. Ik leer u hoe het werkt.",q2:"Moet ik iets installeren?",q2a:"Nee. Het werkt in de browser van uw telefoon, tablet of computer.",q3:"Wat als ik mijn telefoon kwijtraak?",q3a:"Uw gegevens staan online met een back-up. Log in op een ander toestel en alles is er nog.",q4:"Werkt het met SRD, dollar en euro?",q4a:"Ja. Meerdere valuta tegelijk.",q5:"Kunnen mijn medewerkers het gebruiken?",q5a:"Ja. Ieder met een eigen login, en u kiest wat iedereen mag zien.",q6:"Wat kost het?",q6a:"U betaalt één keer voor het maken, daarna een klein maandbedrag om alles werkend te houden. De offerte is gratis.",
+k_t:"Zullen we uw bedrijf van papier halen?",k_p:"Stuur mij een bericht over wat u doet. Ik antwoord en leg alles uit, vrijblijvend.",k_wa:"WhatsApp sturen",k_back:"Bekijk het voorbeeld opnieuw",copy:"Kopiëren",copied:"Gekopieerd"}
+};
+const PT={};document.querySelectorAll("[data-i]").forEach(e=>{PT[e.dataset.i]=e.querySelector("span.y")?e.innerHTML:e.textContent});PT.copied="Copiado";T.pt=PT;
+let lang="pt",biz="shop";
+const $=id=>document.getElementById(id);
+function renderPhone(anim){const D=DEMO[lang],d=D[biz];
+ $("ph-name").textContent=d[0];$("ph-ico").textContent=d[1];$("ph-date").textContent=D.date;
+ $("ph-l").textContent=d[2];$("ph-n").textContent=d[3];$("ph-t").textContent=d[4];
+ const mx=Math.max(...d[5]);$("ph-bars").innerHTML=d[5].map(v=>`<i style="height:${(v/mx*100).toFixed(0)}%"></i>`).join("");
+ $("ph-rows").innerHTML=d[6].map(r=>`<div class="r"><span class="d ${r[0]}"></span><span>${r[1]}</span><b>${r[2]}</b></div>`).join("");
+ if(anim){const s=$("screen");s.classList.remove("swap");void s.offsetWidth;s.classList.add("swap")}}
 function setLang(l){lang=l;const d=T[l];document.documentElement.lang=l==="pt"?"pt-BR":l;
- document.querySelectorAll("[data-i]").forEach(e=>{const v=d[e.dataset.i];if(v==null)return;e.hasAttribute("data-html")?e.innerHTML=v:e.textContent=v});
+ document.querySelectorAll("[data-i]").forEach(e=>{const v=d[e.dataset.i];if(v==null)return;v.indexOf("<span")>-1?e.innerHTML=v:e.textContent=v});
  document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.lang===l)));
- try{localStorage.setItem("aurum-lang3",l)}catch(e){}}
+ renderPhone(false);try{localStorage.setItem("aurum-lang4",l)}catch(e){}}
 document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));
-let start="en";try{const s=localStorage.getItem("aurum-lang3");if(s&&T[s])start=s}catch(e){}setLang(start);
+document.querySelectorAll(".chip").forEach(c=>c.addEventListener("click",()=>{biz=c.dataset.b;document.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed",String(x===c)));renderPhone(true)}));
+let start="en";try{const s=localStorage.getItem("aurum-lang4");if(s&&T[s])start=s}catch(e){}setLang(start);
 document.querySelectorAll(".copy").forEach(b=>b.addEventListener("click",()=>{
  const v=b.dataset.copy,done=()=>{b.textContent=T[lang].copied;setTimeout(()=>b.textContent=T[lang].copy,1600)};
- const sel=()=>{const t=b.previousElementSibling.querySelector("b");const r=document.createRange();r.selectNodeContents(t);const s=getSelection();s.removeAllRanges();s.addRange(r)};
+ const sel=()=>{const t=b.previousElementSibling;const r=document.createRange();r.selectNodeContents(t);const s=getSelection();s.removeAllRanges();s.addRange(r)};
  try{navigator.clipboard.writeText(v).then(done,sel)}catch(e){sel()}}));
 </script>
 
